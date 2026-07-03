@@ -12,9 +12,11 @@
 
 # 1. Introduction
 
-Ce document décrit l'instance principale **Home Assistant Green** utilisée dans l'infrastructure **Ohanna-House**.
+Ce document décrit l'instance principale **Home Assistant Green** de l'infrastructure **Ohanna-House**.
 
-Elle constitue le cœur de la plateforme domotique et centralise les automatismes, les tableaux de bord, les intégrations ainsi que les services essentiels.
+HA-01 constitue le cœur du système domotique. Il centralise les données, orchestre les interactions entre les différents composants de l'infrastructure et fournit les services nécessaires au pilotage de l'habitation.
+
+L'ensemble des autres composants documentés dans ce projet ont pour objectif de fournir un service à HA-01 ou d'être pilotés par celui-ci.
 
 ---
 
@@ -24,13 +26,14 @@ Elle constitue le cœur de la plateforme domotique et centralise les automatisme
 |---------|--------|
 | Identifiant | HA-01 |
 | Nom | Home Assistant Green |
-| Fabricant | Home Assistant |
-| Catégorie | Serveur domotique |
-| Fonction principale | Plateforme domotique |
+| Fabricant | Nabu Casa |
+| Catégorie | Plateforme domotique |
+| Fonction principale | Centralisation et orchestration de la domotique |
+| Rôle dans l'architecture | Orchestrateur |
 | Adresse IP | 192.168.1.247 |
 | Interface réseau | Ethernet 1 Gb/s |
 | Criticité | Très haute |
-| Supervision | Auto-supervision + Home Assistant |
+| Supervision | Auto-supervision |
 | Sauvegarde | Oui |
 | Procédure de restauration | À rédiger |
 
@@ -38,137 +41,215 @@ Elle constitue le cœur de la plateforme domotique et centralise les automatisme
 
 # 3. Position dans l'infrastructure
 
-| Amont | Équipement | Aval |
-|--------|------------|------|
-| BOX-01 → SW-01 → SW-02 → SW-03 | HA-01 | Utilisateurs, Automatismes, Tableau de bord |
+| Amont | Composant | Aval |
+|--------|-----------|------|
+| BOX-01 → SW-01 → SW-02 → SW-03 | HA-01 | Utilisateurs, automatismes et tableaux de bord |
 
 ---
 
-# 4. Responsabilités
+# 4. Rôle dans l'architecture
 
-HA-01 assure les fonctions suivantes :
+HA-01 est le composant central de l'infrastructure.
 
-- exécution des automatisations ;
-- hébergement des tableaux de bord ;
-- gestion des intégrations ;
-- supervision de l'infrastructure ;
-- centralisation des équipements domotiques ;
-- communication avec le broker MQTT ;
-- communication avec le serveur Z-Wave JS UI.
+Il assure notamment :
 
-Cette instance constitue le point central de l'infrastructure domotique.
+- l'orchestration des différents services ;
+- l'exécution des automatisations ;
+- la centralisation des données ;
+- la supervision de l'infrastructure ;
+- la mise à disposition des tableaux de bord ;
+- l'intégration des différents protocoles domotiques.
+
+Les fonctions spécialisées (téléinformation, Z-Wave, DNS, VPN...) sont volontairement déportées vers des composants dédiés afin d'améliorer la modularité et la résilience de l'infrastructure.
 
 ---
 
-# 5. Services hébergés
+# 5. Interactions avec l'infrastructure
 
-Les services actuellement hébergés sont :
+## Téléinformation
 
-| Service | Fonction |
-|----------|----------|
-| Home Assistant OS | Système principal |
+| Source | Traitement | Destination |
+|---------|------------|-------------|
+| Compteur Linky | RPI-01 | Mosquitto |
+| Mosquitto | HA-01 | Entités Home Assistant |
+| Home Assistant | Tableaux de bord | Utilisateurs |
+
+---
+
+## Réseau Z-Wave
+
+| Source | Traitement | Destination |
+|---------|------------|-------------|
+| Modules Z-Wave | Contrôleur RaZberry | RPI-02 |
+| RPI-02 | HA-01 | Entités Home Assistant |
+
+---
+
+## Résolution DNS
+
+| Source | Traitement | Destination |
+|---------|------------|-------------|
+| HA-01 | AdGuard Home | DNS publics |
+
+---
+
+## Accès distant
+
+| Source | Traitement | Destination |
+|---------|------------|-------------|
+| Client VPN | WireGuard | HA-01 |
+
+---
+
+## Messagerie MQTT
+
+| Source | Traitement | Destination |
+|---------|------------|-------------|
+| RPI-01 | Mosquitto | HA-01 |
+
+---
+
+# 6. Services
+
+## Services fournis
+
+HA-01 fournit les services suivants :
+
+| Service | Description |
+|----------|-------------|
+| Automatisations | Exécution des scénarios domotiques |
+| Tableaux de bord | Interface utilisateur |
+| Intégrations | Communication avec les équipements |
+| API | Accès aux applications et services externes |
+| Supervision | Suivi de l'état de l'infrastructure |
+
+---
+
+## Services hébergés
+
+| Service | Description |
+|----------|-------------|
+| Home Assistant OS | Système d'exploitation |
 | Home Assistant Core | Plateforme domotique |
 | Mosquitto | Broker MQTT |
-| Add-ons | Services complémentaires |
 
 Les autres services sont documentés dans leurs documents respectifs.
 
 ---
 
-# 6. Dépendances
+# 7. Dépendances
 
-HA-01 dépend notamment :
+## HA-01 dépend de
 
-- de BOX-01 pour l'accès réseau ;
-- de Mosquitto pour les échanges MQTT ;
-- de RPI-01 pour la téléinformation Linky ;
-- de RPI-02 pour le réseau Z-Wave ;
-- des deux instances AdGuard Home pour la résolution DNS.
-
-Une indisponibilité de HA-01 entraîne l'arrêt de la majorité des fonctions domotiques.
+- BOX-01
+- SW-01
+- SW-02
+- SW-03
+- AdGuard Home
+- Mosquitto
+- RPI-01
+- RPI-02
 
 ---
 
-# 7. Criticité
+## Les composants suivants dépendent de HA-01
+
+- Tableaux de bord
+- Automatismes
+- Utilisateurs
+- Intégrations
+
+---
+
+# 8. Criticité
 
 | Élément | Valeur |
 |---------|--------|
 | Niveau | Très haute |
-| Impact en cas de panne | Très important |
+| Fonctionnement global | Très fortement dégradé |
 | Redondance | Aucune |
+| Priorité de restauration | 1 |
 
-La restauration de HA-01 constitue la priorité absolue en cas de sinistre.
+En cas de sinistre, HA-01 constitue le premier composant à restaurer.
 
 ---
 
-# 8. Sauvegarde
+# 9. Sauvegarde
 
-Les sauvegardes complètes de Home Assistant sont réalisées régulièrement.
-
-Elles comprennent notamment :
+Les sauvegardes de HA-01 comprennent notamment :
 
 - configuration Home Assistant ;
 - automatisations ;
 - tableaux de bord ;
 - add-ons ;
-- secrets ;
-- intégrations.
+- utilisateurs ;
+- intégrations ;
+- secrets.
 
-La procédure de sauvegarde est documentée dans le dossier **procedures**.
+La procédure complète de sauvegarde est décrite dans le dossier **procedures**.
 
 ---
 
-# 9. Maintenance
+# 10. Maintenance
 
 Les opérations de maintenance comprennent :
 
 - mise à jour de Home Assistant OS ;
 - mise à jour de Home Assistant Core ;
 - mise à jour des add-ons ;
-- contrôle des sauvegardes ;
-- vérification des journaux ;
-- contrôle des intégrations.
+- vérification des sauvegardes ;
+- contrôle des journaux ;
+- vérification des intégrations ;
+- contrôle des performances générales.
 
-Chaque intervention importante devra être documentée.
+Toute opération importante devra être documentée avant sa mise en production.
 
 ---
 
-# 10. Historique fonctionnel
+# 11. Historique fonctionnel
 
 | Date | Version | Modification | Référence |
 |------|---------|--------------|-----------|
 | 2026-07-03 | v0.5.0 (Kakashi) | Création du document | Initialisation |
 
-Les modifications importantes de la plateforme devront être consignées dans ce tableau.
+Les évolutions importantes de la plateforme devront être consignées dans ce tableau.
 
 ---
 
-# 11. Évolutions prévues
+# 12. Évolutions prévues
 
 Les évolutions actuellement identifiées sont :
 
 - documentation détaillée des intégrations ;
-- procédure complète de restauration ;
 - documentation des sauvegardes automatiques ;
-- ajout éventuel de captures d'écran de configuration.
+- procédures d'installation et de restauration ;
+- documentation des tableaux de bord.
 
 ---
 
-# 12. Documents associés
+# 13. Documents associés
 
 ## Architecture
 
+- Architecture.md
 - Architecture-Logique.md
+- Topologie-Reseau.md
 - Decisions-d-Architecture.md
+
+## Réseau
+
+- Freebox-Pop.md
+- Switches.md
+- Linksys-LAPAC1750.md
 
 ## Services
 
 - AdGuard.md
 - WireGuard.md
+- Mosquitto.md
 
 ## Home Assistant
 
-- Mosquitto.md
 - RPi-Linky.md
 - RPi-ZWave.md
 
