@@ -102,3 +102,19 @@ Ils utilisent systématiquement la structure suivante :
 12. Documents associés
 
 Cette structure garantit une documentation homogène et facilite la recherche d'informations.
+
+---
+
+## Chaîne réseau
+
+Les documents décrivant un équipement réseau doivent situer celui-ci dans la chaîne de communication.
+
+Cette information est présentée sous la forme d'un tableau.
+
+Exemple :
+
+| Amont | Équipement | Aval |
+|--------|------------|------|
+| SW-01 | AP-01 | RPI-01 |
+
+Cette représentation complète les diagrammes Mermaid sans les remplacer.

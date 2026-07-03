@@ -61,6 +61,7 @@ Les équipements nécessitant une adresse fixe utilisent des baux DHCP statiques
 | 192.168.1.73 | Panneau solaire n°1 |
 | 192.168.1.78 | Shelly Pro EM Laverie |
 | 192.168.1.81 | Shelly Pro 4EM Laverie |
+| 192.168.1.99 | AP-01 - Linksys-LAPAC1750 |
 | 192.168.1.105 | Shelly Plug S3 Salon |
 | 192.168.1.111 | Caméra piscine |
 | 192.168.1.115 | Shelly Plug S3 Bureau Cathy |

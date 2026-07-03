@@ -38,7 +38,15 @@ Les éléments décrits dans ce document correspondent à l'état de référence
 
 ---
 
-# 3. Responsabilités
+# 3. Position dans l'infrastructure
+
+| Amont | Équipement | Aval |
+|--------|------------|------|
+| Internet | BOX-01 | SW-01 |
+
+---
+
+# 4. Responsabilités
 
 La Freebox assure les fonctions suivantes :
 
@@ -53,7 +61,7 @@ Elle constitue le seul point d'accès entre le réseau local et Internet.
 
 ---
 
-# 4. Configuration réseau
+# 5. Configuration réseau
 
 ## Plan d'adressage
 
@@ -87,7 +95,7 @@ La configuration détaillée est décrite dans **AdGuard.md**.
 
 ---
 
-# 5. Connexions physiques
+# 6. Connexions physiques
 
 La Freebox est reliée au switch principal **SW-01**.
 
@@ -103,7 +111,7 @@ Voir également :
 
 ---
 
-# 6. Dépendances
+# 7. Dépendances
 
 Les équipements suivants dépendent directement de la Freebox :
 
@@ -117,7 +125,7 @@ Une indisponibilité de la Freebox entraîne une perte d'accès Internet et l'ar
 
 ---
 
-# 7. Criticité
+# 8. Criticité
 
 | Élément | Valeur |
 |---------|--------|
@@ -130,7 +138,7 @@ La Freebox constitue un composant critique de l'infrastructure.
 
 ---
 
-# 8. Sauvegarde
+# 9. Sauvegarde
 
 La configuration de la Freebox devra être sauvegardée après chaque modification importante.
 
@@ -144,7 +152,7 @@ Une procédure dédiée sera rédigée dans la phase **Procédures**.
 
 ---
 
-# 9. Maintenance
+# 10. Maintenance
 
 Les opérations de maintenance comprennent :
 
@@ -158,7 +166,7 @@ Chaque intervention devra être documentée si elle modifie la configuration de 
 
 ---
 
-# 10. Historique fonctionnel
+# 11. Historique fonctionnel
 
 | Date | Version | Modification | Référence |
 |------|---------|--------------|-----------|
@@ -170,7 +178,7 @@ Les évolutions mineures (mise à jour du firmware, redémarrage, etc.) ne néce
 
 ---
 
-# 11. Évolutions prévues
+# 12. Évolutions prévues
 
 Les évolutions actuellement identifiées sont :
 
@@ -182,7 +190,7 @@ Les évolutions actuellement identifiées sont :
 
 ---
 
-# 12. Documents associés
+# 13. Documents associés
 
 ## Architecture
 

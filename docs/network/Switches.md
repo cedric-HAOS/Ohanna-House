@@ -30,7 +30,17 @@ Les switchs utilisés sont des équipements non administrables (unmanaged). Ils 
 
 ---
 
-# 3. Responsabilités
+# 3. Position dans l'infrastructure
+
+| Amont | Équipement | Aval |
+|--------|------------|------|
+| BOX-01 | SW-01 | SW-02 / AP-01 |
+| SW-01 | SW-02 | SW-03 |
+| SW-02 | SW-03 | HA-01 / RPI-02 |
+
+---
+
+# 4. Responsabilités
 
 ## SW-01
 
@@ -62,7 +72,7 @@ Il distribue le réseau aux équipements suivants :
 
 ---
 
-# 4. Caractéristiques techniques
+# 5. Caractéristiques techniques
 
 | Switch | Interfaces |
 |----------|------------|
@@ -76,7 +86,7 @@ Aucune configuration particulière n'est nécessaire.
 
 ---
 
-# 5. Connexions
+# 6. Connexions
 
 | Origine | Destination | Débit |
 |----------|-------------|-------:|
@@ -91,7 +101,7 @@ Les interconnexions sont décrites en détail dans **Topologie-Reseau.md**.
 
 ---
 
-# 6. Dépendances
+# 7. Dépendances
 
 Les switchs constituent l'infrastructure de distribution du réseau local.
 
@@ -103,7 +113,7 @@ Une panne de :
 
 ---
 
-# 7. Criticité
+# 8. Criticité
 
 | Switch | Niveau |
 |----------|---------|
@@ -117,7 +127,7 @@ Le switch Linksys impacte uniquement l'infrastructure domotique.
 
 ---
 
-# 8. Sauvegarde
+# 9. Sauvegarde
 
 Les switchs étant non administrables, aucune sauvegarde de configuration n'est nécessaire.
 
@@ -125,7 +135,7 @@ En cas de remplacement, seul le câblage doit être reproduit.
 
 ---
 
-# 9. Maintenance
+# 10. Maintenance
 
 La maintenance se limite à :
 
@@ -138,7 +148,7 @@ Aucune mise à jour logicielle n'est requise.
 
 ---
 
-# 10. Historique fonctionnel
+# 11. Historique fonctionnel
 
 | Date | Version | Modification | Référence |
 |------|---------|--------------|-----------|
