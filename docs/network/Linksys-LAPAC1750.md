@@ -161,6 +161,11 @@ Les évolutions actuellement identifiées sont :
 - Freebox-Pop.md
 - Switches.md
 
+## Services
+
+- AdGuard.md
+- WireGuard.md
+
 ## Diagrammes
 
 - DGM-001 – Architecture physique

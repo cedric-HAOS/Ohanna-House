@@ -23,13 +23,17 @@
 
 # Phase 2 — Kakashi 🚧
 
-## Infrastructure réseau
+## Réseau
 
 - [x] Freebox Pop
 - [x] Switches
 - [x] Linksys LAPAC1750
 - [ ] AdGuard
 - [ ] WireGuard
+
+---
+
+## Services
 
 ---
 

@@ -180,6 +180,11 @@ Les évolutions identifiées sont :
 - Freebox-Pop.md
 - Linksys-LAPAC1750.md
 
+## Services
+
+- AdGuard.md
+- WireGuard.md
+
 ## Diagrammes
 
 - DGM-001 – Architecture physique

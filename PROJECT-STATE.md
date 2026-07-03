@@ -30,6 +30,13 @@
 - ✅ Switches
 - ✅ Linksys LAPAC1750
 
+### Services
+
+- ✅ AdGuard
+- ✅ WireGuard
+
+### Home Assistant
+
 ---
 
 ## Diagrammes

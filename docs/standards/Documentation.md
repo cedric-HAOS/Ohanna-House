@@ -118,3 +118,29 @@ Exemple :
 | SW-01 | AP-01 | RPI-01 |
 
 Cette représentation complète les diagrammes Mermaid sans les remplacer.
+
+---
+
+# Organisation documentaire
+
+Les documents sont organisés selon leur responsabilité.
+
+## Architecture
+
+Décrit les principes généraux de l'infrastructure.
+
+## Réseau
+
+Décrit les équipements réseau physiques.
+
+## Services
+
+Décrit les services indépendants de la plateforme domotique.
+
+## Home Assistant
+
+Décrit la plateforme Home Assistant et ses composants propres.
+
+## Procédures
+
+Décrit les opérations d'installation, de maintenance et de restauration.

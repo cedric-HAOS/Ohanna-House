@@ -77,6 +77,7 @@ Ohanna-House/
 ├── docs/
 │   ├── architecture/
 │   ├── network/
+│   ├── services/
 │   ├── home-assistant/
 │   └── standards/
 │
@@ -103,6 +104,7 @@ Ohanna-House/
 - `docs/architecture/Architecture-Logique.md`
 - `docs/architecture/Inventaire.md`
 - `docs/architecture/Adressage-IP.md`
+- `docs/architecture/Capacites-Reseau.md`
 - `docs/architecture/Decisions-d-Architecture.md`
 
 ### Réseau
@@ -110,15 +112,16 @@ Ohanna-House/
 - `docs/network/Freebox-Pop.md`
 - `docs/network/Switches.md`
 - `docs/network/Linksys-LAPAC1750.md`
-- `docs/network/AdGuard.md`
-- `docs/network/WireGuard.md`
+
+### Services
+
+- `docs/services/AdGuard.md`
+- `docs/services/WireGuard.md`
+- `docs/services/Mosquitto.md`
 
 ### Home Assistant
 
 - `docs/home-assistant/Home-Assistant-Green.md`
-- `docs/home-assistant/Mosquitto.md`
-- `docs/home-assistant/RPi-Linky.md`
-- `docs/home-assistant/RPi-ZWave.md`
 
 ---
 
