@@ -172,7 +172,11 @@ Ils utilisent systématiquement la structure suivante :
 
 Chaque document doit rester centré sur son unique responsabilité.
 
-Les informations relatives à l'installation, la configuration détaillée, la mise à jour ou la restauration sont décrites dans les documents du dossier `procedures/`.
+Les informations relatives à l'installation, la configuration détaillée, la maintenance, la sauvegarde, la restauration ou la migration sont décrites dans les procédures correspondantes.
+
+Les documents d'exploitation décrivent le composant.
+
+Les procédures décrivent les opérations réalisées sur ce composant..
 
 ---
 
@@ -230,3 +234,88 @@ Le rôle est distinct de la fonction principale du composant.
 De nouveaux rôles pourront être ajoutés si l'évolution de l'infrastructure le nécessite.
 
 Le nombre de rôles doit rester limité afin de conserver une architecture simple et homogène.
+
+## Modèles de procédures
+
+Les procédures décrivent une opération permettant d'installer, configurer, maintenir, sauvegarder, restaurer ou faire évoluer un composant de l'infrastructure.
+
+Contrairement aux documents d'exploitation, une procédure décrit **comment réaliser une action**.
+
+Les procédures utilisent systématiquement la structure suivante :
+
+1. Objectif
+2. Contexte
+3. Prérequis
+4. Niveau de risque
+5. Impact
+6. Procédure
+7. Vérifications
+8. Retour arrière
+9. Documents associés
+
+---
+
+### Style de rédaction
+
+Les procédures sont rédigées sous forme d'instructions.
+
+Chaque étape doit commencer par un verbe d'action clairement identifiable.
+
+Exemples :
+
+- Connecter le Raspberry Pi au réseau.
+- Installer Home Assistant OS.
+- Vérifier que le service est démarré.
+- Contrôler les journaux système.
+
+Les explications théoriques doivent rester limitées au strict nécessaire.
+
+L'objectif d'une procédure est de permettre la réalisation d'une opération de manière fiable et reproductible.
+
+---
+
+### Navigation dans les interfaces
+
+Lorsqu'une procédure décrit un chemin de navigation dans une interface graphique, celui-ci doit être présenté sous forme d'un bloc dédié.
+
+Exemple :
+
+```text
+Paramètres
+→ Modules complémentaires
+→ Boutique des modules complémentaires
+```
+
+Chaque niveau de navigation est présenté sur une ligne distincte et relié au suivant par le symbole `→`.
+
+Cette présentation est utilisée afin d'améliorer la lisibilité des procédures et d'uniformiser leur rédaction.
+
+Les chemins de navigation ne doivent pas être rédigés sous forme de phrase.
+
+---
+
+### Contenu des procédures
+
+Une procédure doit permettre :
+
+- de préparer l'intervention ;
+- d'exécuter les opérations dans le bon ordre ;
+- de vérifier le bon déroulement de l'opération ;
+- de revenir à l'état précédent en cas d'échec.
+
+Les informations décrivant un composant ne doivent pas être dupliquées dans une procédure mais référencées dans les documents d'exploitation correspondants.
+
+---
+
+### Noms officiels
+
+Les noms des logiciels, modules complémentaires, intégrations et services doivent être écrits en utilisant leur nom officiel.
+
+Exemples :
+
+- Home Assistant Green
+- Mosquitto Broker
+- Z-Wave JS UI
+- AdGuard Home
+
+Les traductions, abréviations ou appellations approximatives doivent être évitées afin de limiter toute ambiguïté.
