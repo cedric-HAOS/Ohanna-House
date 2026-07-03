@@ -1,55 +1,101 @@
 # État du projet
 
-## Version
+## Projet
 
-**v0.5.0 — Kakashi**
+**Nom :** Ohanna-House
 
----
+**Version actuelle :** v1.0.0-dev (Naruto)
 
-## Progression
-
-██████████████░░░░░░░░░░░░ 50 %
+**Dernière release :** v0.5.0 – Kakashi
 
 ---
 
-## Documents validés
+# Progression
 
-### Architecture
+## Standards
 
-- ✅ Architecture
-- ✅ Topologie réseau
-- ✅ Architecture logique
-- ✅ Inventaire
-- ✅ Adressage IP
-- ✅ Capacités réseau
-- ✅ Décisions d'architecture
-
-### Réseau
-
-- ✅ Freebox Pop
-- ✅ Switches
-- ✅ Linksys LAPAC1750
-
-### Services
-
-- ✅ AdGuard
-- ✅ WireGuard
-
-### Home Assistant
+| Document | État |
+|----------|:----:|
+| Documentation | ✅ |
+| Nommage | ✅ |
+| Versioning | ✅ |
 
 ---
 
-## Diagrammes
+## Architecture
 
-- ✅ DGM-001
-- ✅ DGM-002
-- ✅ DGM-003
-- ✅ DGM-004
-- ✅ DGM-005
-- ✅ DGM-006
+| Document | État |
+|----------|:----:|
+| Architecture | ✅ |
+| Topologie Réseau | ✅ |
+| Architecture Logique | ✅ |
+| Inventaire | ✅ |
+| Adressage IP | ✅ |
+| Capacités Réseau | ✅ |
+| Décisions d'Architecture | ✅ |
 
 ---
 
-## Prochaine étape
+## Réseau
 
-➡️ AdGuard.md
+| Document | État |
+|----------|:----:|
+| Freebox Pop | ✅ |
+| Switches | ✅ |
+| Linksys LAPAC1750 | ✅ |
+
+---
+
+## Services
+
+| Document | État |
+|----------|:----:|
+| AdGuard Home | ✅ |
+| WireGuard | ✅ |
+| Mosquitto | ✅ |
+
+---
+
+## Home Assistant
+
+| Document | État |
+|----------|:----:|
+| Home Assistant Green | ✅ |
+| Raspberry Pi Linky | ✅ |
+| Raspberry Pi Z-Wave | ✅ |
+
+---
+
+# Procédures
+
+## Installation
+
+| Procédure | État |
+|-----------|:----:|
+| Installer Home Assistant OS | ✅ |
+| Installer Home Assistant Green | ✅ |
+| Installer Mosquitto | ✅ |
+| Installer AdGuard Home | ⏳ |
+
+---
+
+## Configuration
+
+| Procédure | État |
+|-----------|:----:|
+| Configurer Home Assistant Green | ⏳ |
+| Configurer Mosquitto | ⏳ |
+| Configurer Raspberry Pi Linky | ⏳ |
+| Configurer Raspberry Pi Z-Wave | ⏳ |
+| Configurer AdGuard Home | ⏳ |
+| Configurer WireGuard (Freebox Pop) | ⏳ |
+
+---
+
+# État général
+
+| Domaine | État |
+|----------|:----:|
+| Documentation | 🟢 Stable |
+| Architecture | 🟢 Stable |
+| Procédures | 🟡 En cours |

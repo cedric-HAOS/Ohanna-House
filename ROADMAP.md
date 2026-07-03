@@ -1,53 +1,85 @@
-# Roadmap
+# Feuille de route
 
-## Version actuelle
-
-**v0.5.0 — Kakashi**
+Ce document présente les évolutions prévues du projet **Ohanna-House**.
 
 ---
 
-# Phase 1 — Iruka ✅
+# Version actuelle
 
-## Architecture
+## v1.0.0-dev — Naruto
 
-- [x] README
-- [x] Architecture
-- [x] Topologie réseau
-- [x] Architecture logique
-- [x] Inventaire
-- [x] Adressage IP
-- [x] Capacités réseau
-- [x] Décisions d'architecture
+### Installation
+
+- [x] Installer Home Assistant OS
+- [x] Installer Home Assistant Green
+- [x] Installer Mosquitto
+- [ ] Installer AdGuard Home
 
 ---
 
-# Phase 2 — Kakashi 🚧
+### Configuration
 
-## Réseau
-
-- [x] Freebox Pop
-- [x] Switches
-- [x] Linksys LAPAC1750
-- [ ] AdGuard
-- [ ] WireGuard
-
----
-
-## Services
+- [ ] Configurer Home Assistant Green
+- [ ] Configurer Mosquitto
+- [ ] Configurer Raspberry Pi Linky
+- [ ] Configurer Raspberry Pi Z-Wave
+- [ ] Configurer AdGuard Home
+- [ ] Configurer WireGuard (Freebox Pop)
 
 ---
 
-## Home Assistant
+### Maintenance
 
-- [ ] Home Assistant Green
-- [ ] Mosquitto
-- [ ] Raspberry Pi Linky
-- [ ] Raspberry Pi Z-Wave
+- [ ] Mettre à jour Home Assistant
+- [ ] Mettre à jour Mosquitto
+- [ ] Mettre à jour AdGuard Home
 
 ---
 
-## Procédures
+### Sauvegarde
 
-- [ ] Sauvegardes
-- [ ] Restaurations
-- [ ] Maintenance
+- [ ] Sauvegarder Home Assistant
+- [ ] Sauvegarder AdGuard Home
+
+---
+
+### Restauration
+
+- [ ] Restaurer Home Assistant
+- [ ] Restaurer Raspberry Pi Linky
+- [ ] Restaurer Raspberry Pi Z-Wave
+- [ ] Restaurer AdGuard Home
+
+---
+
+### Migration
+
+- [ ] Migrer RaZberry vers Home Assistant Connect ZWAVE-2
+
+---
+
+# Version suivante
+
+## v1.1 — Yamato
+
+Migration du contrôleur Z-Wave vers **Home Assistant Connect ZWAVE-2**.
+
+---
+
+# Version future
+
+## v1.2 — Shikamaru
+
+Optimisation de l'infrastructure.
+
+---
+
+## v1.3 — Tsunade
+
+Renforcement de la résilience.
+
+---
+
+## v2.0 — Hashirama
+
+Deuxième génération de l'infrastructure.

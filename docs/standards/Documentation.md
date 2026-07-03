@@ -210,6 +210,60 @@ Elles peuvent concerner :
 
 Une procédure doit permettre de reproduire une opération de manière fiable, sans nécessiter de connaissances implicites.
 
+## Types de procédures
+
+Deux catégories de procédures sont utilisées dans le projet.
+
+### Procédure d'installation
+
+Une procédure d'installation décrit les opérations permettant de rendre un composant opérationnel.
+
+Elle utilise la structure suivante :
+
+1. Objectif
+2. Contexte
+3. Prérequis
+4. Niveau de risque
+5. Impact
+6. Procédure
+7. Vérifications
+8. Retour arrière
+9. Documents associés
+
+---
+
+### Procédure de configuration
+
+Une procédure de configuration décrit les opérations permettant d'appliquer la configuration de référence d'Ohanna-House à un composant.
+
+Elle utilise la structure suivante :
+
+1. Objectif
+2. Contexte
+3. Prérequis
+4. Niveau de risque
+5. Impact
+6. Procédure
+7. Configuration appliquée
+8. Vérifications
+9. Retour arrière
+10. Documents associés
+
+---
+
+### Contenu des procédures
+
+Une procédure doit permettre :
+
+- de préparer l'intervention ;
+- d'exécuter les opérations dans le bon ordre ;
+- de vérifier le bon déroulement de l'opération ;
+- de revenir à l'état précédent en cas d'échec.
+
+Les informations décrivant un composant ne doivent pas être dupliquées dans une procédure mais référencées dans les documents d'exploitation correspondants.
+
+---
+
 ## Rôles dans l'architecture
 
 Chaque composant de l'infrastructure possède un rôle dans l'architecture.
@@ -291,19 +345,6 @@ Chaque niveau de navigation est présenté sur une ligne distincte et relié au 
 Cette présentation est utilisée afin d'améliorer la lisibilité des procédures et d'uniformiser leur rédaction.
 
 Les chemins de navigation ne doivent pas être rédigés sous forme de phrase.
-
----
-
-### Contenu des procédures
-
-Une procédure doit permettre :
-
-- de préparer l'intervention ;
-- d'exécuter les opérations dans le bon ordre ;
-- de vérifier le bon déroulement de l'opération ;
-- de revenir à l'état précédent en cas d'échec.
-
-Les informations décrivant un composant ne doivent pas être dupliquées dans une procédure mais référencées dans les documents d'exploitation correspondants.
 
 ---
 

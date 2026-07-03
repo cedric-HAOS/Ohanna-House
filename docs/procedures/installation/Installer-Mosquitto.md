@@ -110,11 +110,12 @@ Attendre la fin de l'installation.
 
 ## Étape 6
 
-Activer les options suivantes :
+| Option                  | Valeur |
+| ----------------------- | :----: |
+| Démarrer au démarrage   |    ✔   |
+| Watchdog                |    ✔   |
+| Mise à jour automatique |    ✔   |
 
-- Démarrer au démarrage
-- Watchdog
-- Mise à jour automatique
 
 ---
 

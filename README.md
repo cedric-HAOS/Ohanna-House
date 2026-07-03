@@ -95,6 +95,39 @@ Ohanna-House/
 
 ---
 
+## Cycle de vie documentaire
+
+Chaque composant de l'infrastructure est documenté selon son cycle de vie.
+
+```text
+Composant
+        │
+        ▼
+Document d'exploitation
+        │
+        ▼
+Installation
+        │
+        ▼
+Configuration
+        │
+        ▼
+Maintenance
+        │
+        ▼
+Sauvegarde
+        │
+        ▼
+Restauration
+        │
+        ▼
+Migration
+```
+
+Cette organisation garantit que chaque opération est documentée de manière indépendante, tout en conservant une documentation cohérente et facilement maintenable.
+
+---
+
 ## Documents principaux
 
 ### Architecture

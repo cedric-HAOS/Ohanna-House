@@ -8,30 +8,39 @@
 | Niveau de qualité | 🟣 Référence |
 | Dernière mise à jour | 03/07/2026 |
 
-> ℹ️ Cette procédure décrit l'installation du module complémentaire **AdGuard Home** sur Home Assistant.
+> ℹ️ **Information**
+>
+> Cette procédure décrit l'installation du module complémentaire **AdGuard Home** sur **HA-01 (Home Assistant Green)**.
+>
+> Elle ne couvre pas la configuration des serveurs DNS, des listes de filtrage, des clients ni des paramètres de protection.
 
 ---
 
 # 1. Objectif
 
-Installer le module complémentaire AdGuard Home.
+Installer le module complémentaire **AdGuard Home** sur HA-01.
+
+À l'issue de cette procédure, le service est installé, démarré et prêt à être configuré.
 
 ---
 
 # 2. Contexte
 
-Utiliser cette procédure :
+Utiliser cette procédure dans les cas suivants :
 
-- lors d'une première installation ;
-- après reconstruction.
+- première installation d'AdGuard Home ;
+- reconstruction de HA-01 ;
+- réinstallation du module complémentaire.
 
 ---
 
 # 3. Prérequis
 
-- HA-01 opérationnel
-- Accès administrateur
-- Connexion Internet
+Les éléments suivants sont nécessaires :
+
+- HA-01 opérationnel ;
+- accès administrateur à Home Assistant ;
+- connexion Internet.
 
 ---
 
@@ -47,7 +56,7 @@ Utiliser cette procédure :
 
 | Élément | Valeur |
 |---------|--------|
-| Interruption de service | Non |
+| Interruption de service | Non (première installation) |
 | Impact utilisateur | Aucun |
 | Fenêtre de maintenance recommandée | Non |
 
@@ -57,6 +66,12 @@ Utiliser cette procédure :
 
 ## Étape 1
 
+Ouvrir l'interface Web de Home Assistant.
+
+---
+
+## Étape 2
+
 Accéder au menu :
 
 ```text
@@ -65,51 +80,96 @@ Paramètres
 → Boutique des modules complémentaires
 ```
 
-## Étape 2
+---
 
-Rechercher :
+## Étape 3
+
+Rechercher le module complémentaire :
 
 ```text
 AdGuard Home
 ```
 
-## Étape 3
-
-Sélectionner **AdGuard Home**.
+---
 
 ## Étape 4
 
-Cliquer sur **Installer**.
+Sélectionner **AdGuard Home**.
+
+Vérifier que l'éditeur est **Home Assistant**.
+
+---
 
 ## Étape 5
 
-Activer :
+Cliquer sur **Installer**.
 
-- Démarrer au démarrage
-- Watchdog
-- Mise à jour automatique
+Attendre la fin de l'installation.
+
+---
 
 ## Étape 6
 
-Démarrer le module complémentaire.
+| Option                  | Valeur |
+| ----------------------- | :----: |
+| Démarrer au démarrage   |    ✔   |
+| Watchdog                |    ✔   |
+| Mise à jour automatique |    ✔   |
+
+
+---
+
+## Étape 7
+
+Cliquer sur **Démarrer**.
+
+Attendre le démarrage complet du module complémentaire.
 
 ---
 
 # 7. Vérifications
 
-- [ ] Module installé.
-- [ ] Service démarré.
-- [ ] Aucun message d'erreur.
+Vérifier les points suivants :
+
+- [ ] Le module complémentaire est installé.
+- [ ] Le service est démarré.
+- [ ] Le statut est « En cours d'exécution ».
+- [ ] Aucun message d'erreur n'est présent dans les journaux.
+- [ ] Le démarrage automatique est activé.
+- [ ] Watchdog est activé.
+- [ ] Les mises à jour automatiques sont activées.
 
 ---
 
 # 8. Retour arrière
 
-Désinstaller le module complémentaire puis recommencer.
+En cas d'échec :
+
+- arrêter le module complémentaire ;
+- consulter les journaux ;
+- corriger l'erreur identifiée ;
+- redémarrer le module complémentaire.
+
+Si nécessaire :
+
+- désinstaller le module complémentaire ;
+- reprendre la procédure depuis le début.
 
 ---
 
 # 9. Documents associés
 
+## Services
+
 - AdGuard.md
+
+## Home Assistant
+
+- Home-Assistant-Green.md
+
+## Procédures
+
 - Configurer-AdGuard.md *(à rédiger)*
+- Mettre-a-jour-AdGuard.md *(à rédiger)*
+- Sauvegarder-AdGuard.md *(à rédiger)*
+- Restaurer-AdGuard.md *(à rédiger)*
