@@ -1,41 +1,19 @@
-# État du projet
-
 Version actuelle
 
-v0.1 — Iruka
+v0.1.0 — Iruka
 
----
+Progression
 
-## Documents validés
+████████████░░░░░░░░░░░░░░ 40 %
 
-- ✅ README
-- ✅ Architecture
-- ✅ Topologie réseau
-- ✅ Architecture logique
-- ✅ Inventaire
-- ✅ Adressage IP
+Phase en cours
 
----
+✅ Iruka terminée
 
-## Diagrammes
+Prochaine étape
 
-- ✅ DGM-001
-- ✅ DGM-002
-- ✅ DGM-003
-- ✅ DGM-004
-- ✅ DGM-005
-- ✅ DGM-006
+➡️ v0.5 — Kakashi
 
----
+Premier document :
 
-## Standards
-
-- ✅ Documentation
-- ✅ Versioning
-- ✅ Nommage
-
----
-
-## Document en préparation
-
-➡️ Adressage-IP.md
+Freebox-Pop.md
