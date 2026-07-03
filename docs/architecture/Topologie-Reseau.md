@@ -1,150 +1,205 @@
-# Topologie du réseau
+# Topologie réseau
 
 | Élément | Valeur |
 |---------|--------|
 | Projet | Ohanna-House |
-| Document | Topologie du réseau |
-| Version | 0.1 "Iruka" |
-| Criticité | ⭐⭐⭐⭐⭐ |
-| Dernière mise à jour | 02/07/2026 |
+| Document | Topologie réseau |
+| Version | 1.0 |
+| Statut | Validé |
+| Dernière mise à jour | 03/07/2026 |
 
 ---
 
-# 1. Objet
+# 1. Introduction
 
-Ce document décrit la topologie physique du réseau de l'infrastructure Ohanna-House.
+Ce document décrit la topologie physique du réseau informatique de l'infrastructure **Ohanna-House**.
 
-Il présente les équipements constituant le réseau local, leurs interconnexions ainsi que les technologies utilisées pour assurer les communications.
+Il présente les équipements réseau, leurs interconnexions ainsi que les capacités des différentes liaisons.
 
-Les paramètres de configuration des équipements sont documentés dans leurs chapitres respectifs.
-
----
-
-# 2. Topologie physique
-
-La figure ci-dessous présente l'organisation physique des équipements constituant l'infrastructure.
-
-```text
-                                        Internet
-                                            │
-                                          Fibre
-                                            │
-                                    ┌─────────────────┐
-                                    │ BOX-01          │
-                                    └────────┬────────┘
-                                             │
-                                       Ethernet 2.5 Gb
-                                             │
-                                    ┌────────▼────────┐
-                                    │ SW-01           │
-                                    └──────┬─────┬────┘
-                                           │     │
-                             Ethernet 1 Gb │     │ Ethernet 10 Gb
-                                           │     │
-                                           │     ▼
-                              ┌────────────▼──┐  ┌─────────────────┐
-                              │ AP-01         │  │ SW-02           │
-                              └──────┬────────┘  └────────┬────────┘
-                                     │                    │
-                                   Wi-Fi             Ethernet 1 Gb
-                                     │                    │
-                          ┌──────────▼───────┐   ┌────────▼────────┐
-                          │ RPI-01           │   │ SW-03           │
-                          └──────────────────┘   └──────┬─────┬────┘
-                                                        │     │
-                                            Ethernet 1 Gb│     │Ethernet 1 Gb
-                                                        │     │
-                                           ┌────────────▼┐ ┌──▼────────────┐
-                                           │ HA-01       │ │ RPI-02        │
-                                           └─────────────┘ └───────────────┘
-```
-
-**Figure 1 — Topologie physique de l'infrastructure**
-
-### Légende
-
-| Symbole | Signification |
-|----------|---------------|
-| ───── | Liaison Ethernet |
-| Wi-Fi | Liaison sans fil |
-| Fibre | Accès Internet |
+Les configurations des équipements sont documentées dans leurs chapitres respectifs.
 
 ---
 
-# 3. Inventaire des équipements
+# 2. Diagramme de référence
 
-| Identifiant | Fonction | Documentation |
-|-------------|----------|---------------|
-| BOX-01 | Passerelle Internet | Freebox-Pop.md |
-| SW-01 | Switch principal | Switches.md |
-| SW-02 | Switch de distribution | Switches.md |
-| SW-03 | Switch dédié à l'infrastructure domotique | Switches.md |
-| AP-01 | Point d'accès Wi-Fi | Linksys-LAPAC1750.md |
-| HA-01 | Instance principale Home Assistant | Home-Assistant-Green.md |
-| RPI-01 | Acquisition de la téléinformation | RPi-Linky.md |
-| RPI-02 | Gestion du réseau Z-Wave | RPi-ZWave.md |
+Le diagramme officiel de la topologie réseau est :
+
+**DGM-002 – Topologie réseau**
+
+Ce diagramme constitue la référence de l'architecture physique du réseau.
 
 ---
 
-# 4. Liaisons
+# 3. Organisation générale
 
-| Origine | Destination | Support | Capacité de liaison |
-|----------|-------------|---------|--------------------:|
+Le réseau est organisé autour d'un backbone Ethernet reliant l'ensemble des équipements.
+
+La distribution est assurée par trois switchs Ethernet.
+
+Le point d'accès Wi-Fi est connecté au switch principal.
+
+Les équipements domotiques sont regroupés sur un switch Gigabit dédié.
+
+Le Raspberry Pi Linky est connecté en Wi-Fi.
+
+---
+
+# 4. Inventaire des interconnexions
+
+| Origine | Destination | Support | Débit |
+|----------|-------------|----------|-------:|
 | BOX-01 | SW-01 | Ethernet | 2,5 Gb |
 | SW-01 | SW-02 | Ethernet | 10 Gb |
 | SW-02 | SW-03 | Ethernet | 1 Gb |
 | SW-01 | AP-01 | Ethernet | 1 Gb |
-| AP-01 | RPI-01 | Wi-Fi | Variable |
+| AP-01 | RPI-01 | Wi-Fi | 802.11ac |
 | SW-03 | HA-01 | Ethernet | 1 Gb |
 | SW-03 | RPI-02 | Ethernet | 1 Gb |
 
 ---
 
-# 5. Chemins principaux
+# 5. Description des équipements réseau
 
-Les principaux flux de communication empruntent les chemins suivants.
+## BOX-01 — Freebox Pop
 
-| Communication | Chemin |
-|---------------|--------|
-| Internet → Home Assistant | BOX-01 → SW-01 → SW-02 → SW-03 → HA-01 |
-| Linky → Home Assistant | RPI-01 → AP-01 → SW-01 → SW-02 → SW-03 → HA-01 |
-| Home Assistant → Réseau Z-Wave | HA-01 → SW-03 → RPI-02 |
+La Freebox Pop constitue le point d'entrée de l'infrastructure.
 
----
+Elle assure :
 
-# 6. Technologies utilisées
-
-| Technologie | Usage |
-|-------------|-------|
-| Fibre | Accès Internet |
-| Ethernet | Communications filaires |
-| Wi-Fi | Connexion du Raspberry Pi Linky |
+- l'accès Internet ;
+- le routage IPv4 / IPv6 ;
+- le serveur DHCP ;
+- les redirections nécessaires à WireGuard.
 
 ---
 
-# 7. Dépendances
+## SW-01 — Switch principal
 
-| Équipement | Dépend de |
-|------------|-----------|
-| SW-01 | BOX-01 |
-| SW-02 | SW-01 |
-| SW-03 | SW-02 |
-| AP-01 | SW-01 |
-| HA-01 | SW-03 |
-| RPI-01 | AP-01 |
-| RPI-02 | SW-03 |
+Le switch principal constitue le cœur de la distribution réseau.
+
+Il relie :
+
+- la Freebox Pop ;
+- le point d'accès Wi-Fi ;
+- le backbone 10 Gb vers SW-02.
 
 ---
 
-# 8. Documents associés
+## SW-02 — Switch secondaire
+
+Le second switch TRENDnet prolonge le backbone réseau.
+
+Il assure la liaison vers le switch dédié à l'infrastructure domotique.
+
+---
+
+## SW-03 — Switch domotique
+
+Le switch Linksys Gigabit est exclusivement dédié aux équipements domotiques.
+
+Il relie :
+
+- HA-01 ;
+- RPI-02.
+
+---
+
+## AP-01 — Linksys LAPAC1750
+
+Le point d'accès Wi-Fi fournit la connectivité sans fil au Raspberry Pi Linky.
+
+Son interface Ethernet est limitée à 1 Gb/s.
+
+---
+
+# 6. Analyse de la topologie
+
+## Backbone réseau
+
+Les switchs SW-01 et SW-02 sont interconnectés par une liaison Ethernet à 10 Gb/s.
+
+Cette liaison constitue le backbone principal de l'infrastructure.
+
+Elle offre une capacité largement supérieure aux besoins actuels et prépare les évolutions futures.
+
+---
+
+## Réseau domotique
+
+Les équipements HA-01 et RPI-02 sont regroupés sur SW-03.
+
+Leur trafic réseau étant limité, une liaison Gigabit est largement suffisante.
+
+---
+
+## Réseau Wi-Fi
+
+Le Raspberry Pi Linky est connecté au réseau via AP-01.
+
+Cette liaison transporte essentiellement des messages MQTT de faible volume.
+
+Son utilisation n'a donc pas d'impact significatif sur les performances du réseau.
+
+---
+
+## Organisation
+
+L'architecture est organisée selon une logique fonctionnelle et non géographique.
+
+Chaque équipement est positionné selon son rôle dans l'infrastructure.
+
+Cette organisation facilite la compréhension du réseau et son évolution.
+
+---
+
+# 7. Capacités réseau
+
+| Liaison | Capacité maximale |
+|----------|------------------:|
+| Backbone SW-01 ↔ SW-02 | 10 Gb/s |
+| Freebox ↔ SW-01 | 2,5 Gb/s |
+| SW-02 ↔ SW-03 | 1 Gb/s |
+| SW-01 ↔ AP-01 | 1 Gb/s |
+| SW-03 ↔ HA-01 | 1 Gb/s |
+| SW-03 ↔ RPI-02 | 1 Gb/s |
+| AP-01 ↔ RPI-01 | Wi-Fi 802.11ac |
+
+---
+
+# 8. Résilience
+
+La topologie a été conçue afin de limiter les impacts d'une panne.
+
+Les principes retenus sont les suivants :
+
+- backbone dédié entre les deux switchs principaux ;
+- séparation des fonctions réseau et domotique ;
+- équipements critiques connectés en Ethernet ;
+- liaison Wi-Fi réservée au Raspberry Pi Linky.
+
+---
+
+# 9. Évolutions prévues
+
+Les évolutions actuellement envisagées sont :
+
+- remplacement éventuel du Raspberry Pi Z-Wave par un Home Assistant Connect ZWAV-2 ;
+- ajout d'un NAS ;
+- ajout d'un onduleur ;
+- ajout de nouveaux équipements réseau.
+
+Ces évolutions ne remettent pas en cause la topologie générale.
+
+---
+
+# 10. Documents associés
 
 ## Architecture
 
 - Architecture.md
 - Architecture-Logique.md
-- Inventaire-Materiel.md
-- Plan-d-adressage.md
-- Glossaire.md
+- Inventaire.md
+- Adressage-IP.md
 
 ## Réseau
 
@@ -152,8 +207,18 @@ Les principaux flux de communication empruntent les chemins suivants.
 - Switches.md
 - Linksys-LAPAC1750.md
 
-## Home Assistant
+## Services
 
-- Home-Assistant-Green.md
-- RPi-Linky.md
-- RPi-ZWave.md
+- AdGuard.md
+- WireGuard.md
+
+## Diagrammes
+
+- DGM-001 – Architecture physique
+- DGM-002 – Topologie réseau
+
+---
+
+Le présent document décrit l'état de référence de la topologie réseau au moment de sa rédaction.
+
+Toute modification de l'architecture physique devra être répercutée dans cette documentation avant sa mise en production.

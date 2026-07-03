@@ -4,267 +4,219 @@
 |---------|--------|
 | Projet | Ohanna-House |
 | Document | Architecture de l'infrastructure |
-| Version | 0.1 "Iruka" |
-| Criticité | ⭐⭐⭐⭐⭐ |
-| Dernière mise à jour | 02/07/2026 |
+| Version | 1.0 |
+| Statut | Validé |
+| Dernière mise à jour | 03/07/2026 |
 
 ---
 
-# 1. Objet
+# 1. Introduction
 
-Ce document décrit l'architecture générale de l'infrastructure informatique et domotique d'Ohanna-House.
+Ce document présente l'architecture générale de l'infrastructure informatique et domotique d'**Ohanna-House**.
 
-Il présente les principes de conception retenus, les composants majeurs de l'infrastructure, leurs responsabilités ainsi que leurs interactions.
+Il constitue le document de référence du projet et décrit les grands principes d'organisation de l'infrastructure.
 
-Il constitue le document de référence du projet.
-
-Les détails d'implémentation, de configuration, de maintenance et de restauration sont documentés dans les chapitres spécialisés.
+Les aspects techniques détaillés (configuration des équipements, procédures, adressage IP, services, etc.) sont documentés dans les chapitres dédiés.
 
 ---
 
-# 2. Périmètre
+# 2. Objectifs
 
-## Inclus
+L'architecture a été conçue afin de répondre aux objectifs suivants :
 
-Le présent document couvre :
-
-- l'architecture réseau ;
-- l'infrastructure domotique ;
-- les principaux services ;
-- les interactions entre composants ;
-- les principes de résilience ;
-- les décisions d'architecture.
-
-## Exclus
-
-Le présent document ne décrit pas :
-
-- les configurations détaillées des équipements ;
-- les paramètres réseau ;
-- les automatisations Home Assistant ;
-- les tableaux de bord ;
-- les scripts ;
-- les procédures d'installation ou de restauration.
+- Séparer les responsabilités entre les différents équipements.
+- Limiter les dépendances entre les services.
+- Faciliter les opérations de maintenance.
+- Simplifier la restauration après une panne.
+- Permettre l'évolution de l'infrastructure sans remettre en cause son architecture.
 
 ---
 
 # 3. Principes d'architecture
 
-L'infrastructure repose sur les principes suivants.
-
-## Séparation des responsabilités
-
-Chaque équipement possède une fonction principale clairement identifiée.
-
-Cette approche simplifie la maintenance, le dépannage ainsi que les évolutions futures.
-
----
-
 ## Modularité
 
-Les services sont répartis sur plusieurs équipements indépendants.
+Chaque équipement possède un rôle clairement défini.
 
-Cette organisation limite les dépendances et réduit l'impact d'une défaillance.
+Aucun équipement n'assure plusieurs fonctions critiques lorsqu'il est possible de les séparer.
 
 ---
 
 ## Simplicité
 
-L'architecture privilégie des composants standards, des protocoles ouverts et une organisation facilement compréhensible.
+Les communications reposent exclusivement sur des protocoles standards :
+
+- Ethernet
+- Wi-Fi
+- MQTT
+- WebSocket
+- DNS
+- WireGuard
 
 ---
 
 ## Évolutivité
 
-L'infrastructure est conçue afin de permettre l'intégration de nouveaux équipements sans remise en cause de son organisation générale.
+L'infrastructure a été pensée pour permettre le remplacement d'un composant sans remettre en cause son architecture globale.
+
+Quelques exemples :
+
+- remplacement du Raspberry Pi Z-Wave par un Home Assistant Connect ZWAV-2 ;
+- remplacement d'un switch ;
+- ajout d'un NAS ;
+- ajout d'un onduleur.
 
 ---
 
 ## Documentation
 
-Chaque composant de l'infrastructure possède son propre document technique.
-
-Le dépôt GitHub constitue la référence documentaire unique du projet.
+Toute évolution importante de l'infrastructure doit être documentée dans ce dépôt Git avant sa mise en production.
 
 ---
 
 # 4. Vue d'ensemble
 
-L'infrastructure est organisée autour de quatre couches fonctionnelles.
-
-```text
-┌──────────────────────────────────────────────┐
-│ Utilisateurs                                 │
-│ PC • Smartphone • Tablette                   │
-└──────────────────────────────────────────────┘
-
-┌──────────────────────────────────────────────┐
-│ Services                                     │
-│ Home Assistant • MQTT • DNS • Z-Wave         │
-└──────────────────────────────────────────────┘
-
-┌──────────────────────────────────────────────┐
-│ Infrastructure                               │
-│ Home Assistant Green • Raspberry Pi • Wi-Fi  │
-└──────────────────────────────────────────────┘
-
-┌──────────────────────────────────────────────┐
-│ Réseau                                       │
-│ Freebox • Switches                           │
-└──────────────────────────────────────────────┘
-```
-
-Cette organisation favorise la séparation des responsabilités et facilite les évolutions de l'infrastructure.
-
-La description détaillée des interconnexions est disponible dans **Topologie-Reseau.md**.
-
----
-
-# 5. Composants principaux
+L'infrastructure repose sur trois ensembles complémentaires.
 
 ## Infrastructure réseau
 
-L'infrastructure réseau assure les communications entre les différents équipements de la maison ainsi que l'accès à Internet.
+Elle assure la connectivité entre tous les équipements.
 
-Elle comprend :
+Équipements concernés :
 
-- la passerelle Internet ;
-- les équipements de commutation ;
-- le réseau Wi-Fi.
+- BOX-01
+- SW-01
+- SW-02
+- SW-03
+- AP-01
 
-Documentation associée :
+Diagrammes associés :
 
-- Topologie-Reseau.md
-- Freebox-Pop.md
-- Switches.md
-- Linksys-LAPAC1750.md
-
----
-
-## Home Assistant Green
-
-Le Home Assistant Green constitue l'instance principale de l'infrastructure.
-
-Il centralise les services nécessaires au fonctionnement de la plateforme domotique.
-
-Documentation associée :
-
-- Home-Assistant-Green.md
-- Mosquitto.md
+- DGM-001 – Architecture physique
+- DGM-002 – Topologie réseau
 
 ---
 
-## Raspberry Pi Linky
+## Infrastructure domotique
 
-Le Raspberry Pi Linky est exclusivement dédié à l'acquisition des données de téléinformation.
+Elle héberge les différents services nécessaires au fonctionnement de la maison connectée.
 
-Il assure leur publication vers le broker MQTT.
+Équipements concernés :
 
-Documentation associée :
+- HA-01
+- RPI-01
+- RPI-02
 
-- RPi-Linky.md
+Diagramme associé :
 
----
-
-## Raspberry Pi Z-Wave
-
-Le Raspberry Pi Z-Wave est exclusivement dédié à la gestion du réseau Z-Wave.
-
-Documentation associée :
-
-- RPi-ZWave.md
+- DGM-003 – Architecture logique
 
 ---
 
-## Services d'infrastructure
+## Services
 
-Les services assurent le fonctionnement de l'ensemble de la plateforme.
+Les principaux services sont :
 
-Ils comprennent notamment :
+- Home Assistant
+- Mosquitto
+- Z-Wave JS UI
+- AdGuard Home
+- WireGuard
 
-- Home Assistant ;
-- Mosquitto ;
-- AdGuard Home ;
-- WireGuard.
-
-Documentation associée :
-
-- Mosquitto.md
-- AdGuard.md
-- WireGuard.md
+Chaque service est documenté dans son chapitre dédié.
 
 ---
 
-# 6. Interactions entre composants
+# 5. Flux principaux
 
-| Source | Destination | Fonction |
-|---------|-------------|----------|
-| Linky | Raspberry Pi Linky | Acquisition de la téléinformation |
-| Raspberry Pi Linky | Mosquitto | Publication des données de consommation |
-| Home Assistant Green | Raspberry Pi Z-Wave | Gestion du réseau Z-Wave |
-| Clients du réseau | AdGuard Home | Résolution DNS |
-| Clients distants | WireGuard | Accès sécurisé à l'infrastructure |
+Les échanges entre les différents composants sont assurés par quatre flux principaux.
 
-L'architecture logique est détaillée dans **Architecture-Logique.md**.
+| Flux | Diagramme associé |
+|------|-------------------|
+| Téléinformation / MQTT | DGM-004 – Flux MQTT |
+| Réseau Z-Wave | DGM-005 – Flux Z-Wave |
+| DNS | DGM-006 – Flux DNS / WireGuard |
+| Accès distant WireGuard | DGM-006 – Flux DNS / WireGuard |
 
----
-
-# 7. Décisions d'architecture
-
-Les principales décisions structurantes de l'infrastructure sont documentées sous forme d'Architecture Decision Records (ADR).
-
-| ADR | Sujet |
-|------|-------|
-| ADR-001 | Choix du Home Assistant Green comme instance principale |
-| ADR-002 | Dédié un Raspberry Pi à la téléinformation |
-| ADR-003 | Héberger le réseau Z-Wave sur un Raspberry Pi dédié |
-| ADR-004 | Mettre en œuvre une redondance DNS avec AdGuard Home |
-| ADR-005 | Héberger Mosquitto sur le Home Assistant Green |
-
-Les ADR sont disponibles dans le dossier **decision-log/**.
+Les diagrammes constituent la référence de fonctionnement des différents flux de communication.
 
 ---
 
-# 8. Principes de résilience
+# 6. Répartition des responsabilités
 
-L'architecture met en œuvre plusieurs mécanismes destinés à améliorer la disponibilité des services.
+| Équipement | Fonction principale |
+|------------|---------------------|
+| BOX-01 | Accès Internet, routage et DHCP |
+| SW-01 | Distribution principale du réseau |
+| SW-02 | Backbone réseau |
+| SW-03 | Distribution du réseau domotique |
+| AP-01 | Couverture Wi-Fi |
+| HA-01 | Instance Home Assistant principale |
+| RPI-01 | Acquisition de la téléinformation Linky |
+| RPI-02 | Gestion du réseau Z-Wave |
 
-Les principaux principes retenus sont :
+Chaque composant possède une responsabilité clairement définie.
 
-- séparation des fonctions ;
-- limitation des dépendances entre composants ;
-- redondance du service DNS ;
-- sauvegardes régulières ;
-- documentation exhaustive de l'infrastructure.
-
-Les procédures de reprise après incident sont documentées dans le dossier **procedures/**.
+Cette séparation facilite la maintenance et limite les impacts en cas de panne.
 
 ---
 
-# 9. Évolutions de l'infrastructure
+# 7. Dépendances
 
-L'architecture a été conçue afin de permettre les évolutions suivantes sans remise en cause de son organisation générale :
+Les principales dépendances de l'infrastructure sont les suivantes.
 
-- remplacement du Raspberry Pi Z-Wave par un Home Assistant Connect ZWAVE-2 ;
+| Composant | Dépend de |
+|------------|-----------|
+| HA-01 | Mosquitto |
+| HA-01 | RPI-02 (Z-Wave JS UI) |
+| RPI-01 | Réseau Wi-Fi |
+| RPI-02 | Réseau Ethernet |
+| Tous les équipements | BOX-01 |
+
+Le détail des dépendances est documenté dans les chapitres spécifiques.
+
+---
+
+# 8. Résilience
+
+L'infrastructure a été conçue afin de limiter les conséquences d'une panne.
+
+Les principaux choix retenus sont :
+
+- séparation des fonctions Linky et Z-Wave ;
+- services répartis sur plusieurs équipements ;
+- double serveur DNS via AdGuard Home ;
+- équipements critiques connectés en Ethernet lorsque cela est possible ;
+- utilisation de protocoles standards afin de simplifier les opérations de maintenance et de restauration.
+
+Les procédures de restauration sont décrites dans le dossier `procedures`.
+
+---
+
+# 9. Évolutions prévues
+
+Les principales évolutions actuellement identifiées sont :
+
+- migration vers Home Assistant Connect ZWAV-2 ;
 - ajout d'un NAS ;
-- ajout d'un onduleur (UPS) ;
-- ajout de nouveaux services.
+- ajout d'un onduleur ;
+- amélioration de la supervision ;
 
-Les évolutions planifiées sont suivies dans **ROADMAP.md**.
+Ces évolutions sont suivies dans `ROADMAP.md`.
 
 ---
 
-# 10. Références documentaires
+# 10. Documents associés
 
-## Documents d'architecture
+## Architecture
 
+- Inventaire.md
 - Topologie-Reseau.md
 - Architecture-Logique.md
-- Inventaire-Materiel.md
-- Plan-d-adressage.md
-- Glossaire.md
+- Décisions-d-Architecture.md
+- Adressage-IP.md
 
-## Infrastructure réseau
+## Réseau
 
 - Freebox-Pop.md
 - Switches.md
@@ -282,10 +234,6 @@ Les évolutions planifiées sont suivies dans **ROADMAP.md**.
 - RPi-Linky.md
 - RPi-ZWave.md
 
-## Décisions d'architecture
-
-- decision-log/
-
 ## Procédures
 
-- procedures/
+Voir le dossier `procedures`.

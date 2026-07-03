@@ -1,0 +1,18 @@
+flowchart TD
+    CLIENT["Clients réseau"]
+    FREEBOX["BOX-01<br/>Freebox Pop<br/>DHCP"]
+    ADG1["RPI-01<br/>AdGuard Home"]
+    ADG2["RPI-02<br/>AdGuard Home"]
+    DNS_PUBLIC["DNS publics"]
+    MOBILE["Smartphone / PC distant"]
+    WG["WireGuard<br/>Freebox Pop"]
+    LAN["Réseau local"]
+
+    FREEBOX -- "Distribue DNS1 / DNS2" --> CLIENT
+    CLIENT -- "DNS 53" --> ADG1
+    CLIENT -- "DNS 53" --> ADG2
+    ADG1 --> DNS_PUBLIC
+    ADG2 --> DNS_PUBLIC
+
+    MOBILE -- "VPN WireGuard" --> WG
+    WG --> LAN
