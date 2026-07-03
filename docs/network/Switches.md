@@ -158,7 +158,7 @@ Les modifications importantes de l'infrastructure réseau devront être consign�
 
 ---
 
-# 11. Évolutions prévues
+# 12. Évolutions prévues
 
 Les évolutions identifiées sont :
 
@@ -167,7 +167,7 @@ Les évolutions identifiées sont :
 
 ---
 
-# 12. Documents associés
+# 13. Documents associés
 
 ## Architecture
 

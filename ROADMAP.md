@@ -1,31 +1,48 @@
-# Phase 1 — Fondations
+# Roadmap
+
+## Version actuelle
+
+**v0.5.0 — Kakashi**
+
+---
+
+# Phase 1 — Iruka ✅
+
+## Architecture
 
 - [x] README
 - [x] Architecture
 - [x] Topologie réseau
 - [x] Architecture logique
 - [x] Inventaire
+- [x] Adressage IP
+- [x] Capacités réseau
+- [x] Décisions d'architecture
 
-- [ ] Adressage IP
-- [ ] Capacités réseau
-- [ ] Décisions d'architecture
+---
 
-# Phase 2 — Réseau
+# Phase 2 — Kakashi 🚧
 
-- [ ] Freebox Pop
-- [ ] Switches
-- [ ] Linksys LAPAC1750
+## Infrastructure réseau
+
+- [x] Freebox Pop
+- [x] Switches
+- [x] Linksys LAPAC1750
 - [ ] AdGuard
 - [ ] WireGuard
 
-# Phase 3 — Home Assistant
+---
+
+## Home Assistant
 
 - [ ] Home Assistant Green
 - [ ] Mosquitto
 - [ ] Raspberry Pi Linky
 - [ ] Raspberry Pi Z-Wave
 
-# Phase 4 — Procédures
+---
+
+## Procédures
 
 - [ ] Sauvegardes
 - [ ] Restaurations

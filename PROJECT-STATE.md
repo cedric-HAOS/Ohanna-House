@@ -1,19 +1,48 @@
-Version actuelle
+# État du projet
 
-v0.1.0 — Iruka
+## Version
 
-Progression
+**v0.5.0 — Kakashi**
 
-████████████░░░░░░░░░░░░░░ 40 %
+---
 
-Phase en cours
+## Progression
 
-✅ Iruka terminée
+██████████████░░░░░░░░░░░░ 50 %
 
-Prochaine étape
+---
 
-➡️ v0.5 — Kakashi
+## Documents validés
 
-Premier document :
+### Architecture
 
-Freebox-Pop.md
+- ✅ Architecture
+- ✅ Topologie réseau
+- ✅ Architecture logique
+- ✅ Inventaire
+- ✅ Adressage IP
+- ✅ Capacités réseau
+- ✅ Décisions d'architecture
+
+### Réseau
+
+- ✅ Freebox Pop
+- ✅ Switches
+- ✅ Linksys LAPAC1750
+
+---
+
+## Diagrammes
+
+- ✅ DGM-001
+- ✅ DGM-002
+- ✅ DGM-003
+- ✅ DGM-004
+- ✅ DGM-005
+- ✅ DGM-006
+
+---
+
+## Prochaine étape
+
+➡️ AdGuard.md

@@ -139,7 +139,7 @@ Les modifications importantes de la configuration devront être consignées dans
 
 ---
 
-# 11. Évolutions prévues
+# 12. Évolutions prévues
 
 Les évolutions actuellement identifiées sont :
 
@@ -149,7 +149,7 @@ Les évolutions actuellement identifiées sont :
 
 ---
 
-# 12. Documents associés
+# 13. Documents associés
 
 ## Architecture
 

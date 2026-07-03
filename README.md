@@ -153,4 +153,4 @@ Les diagrammes officiels sont rédigés en Mermaid et stockés dans le dossier `
 
 ## Licence
 
-Ce projet est distribué sous licence MIT.
+Ce projet est distribué sous licence MIT .
