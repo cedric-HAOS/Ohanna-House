@@ -5,7 +5,7 @@
 | Projet | Ohanna-House |
 | Document | Architecture de l'infrastructure |
 | Version | 1.0 |
-| Statut | Validé |
+| Niveau de qualité | 🟣 Référence |
 | Dernière mise à jour | 03/07/2026 |
 
 ---

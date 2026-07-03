@@ -13,6 +13,7 @@ v0.1 — Iruka
 - ✅ Topologie réseau
 - ✅ Architecture logique
 - ✅ Inventaire
+- ✅ Adressage IP
 
 ---
 

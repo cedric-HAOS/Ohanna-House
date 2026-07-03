@@ -1,11 +1,10 @@
 # Topologie réseau
 
-| Élément | Valeur |
 |---------|--------|
 | Projet | Ohanna-House |
 | Document | Topologie réseau |
 | Version | 1.0 |
-| Statut | Validé |
+| Niveau de qualité | 🟣 Référence |
 | Dernière mise à jour | 03/07/2026 |
 
 ---

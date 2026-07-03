@@ -3,9 +3,10 @@
 | Élément | Valeur |
 |---------|--------|
 | Projet | Ohanna-House |
+| Document | Inventaire |
 | Version | 1.0 |
-| Statut | Validé |
-| Type | Document de référence |
+| Niveau de qualité | 🟣 Référence |
+| Dernière mise à jour | 03/07/2026 |
 
 ---
 

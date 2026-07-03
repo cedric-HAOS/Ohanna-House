@@ -5,7 +5,7 @@
 | Projet | Ohanna-House |
 | Document | Architecture logique |
 | Version | 1.0 |
-| Niveau de qualité | 🟢 Validé |
+| Niveau de qualité | 🟣 Référence |
 | Dernière mise à jour | 03/07/2026 |
 
 ---
