@@ -1,32 +1,28 @@
 # Changelog
 
-Toutes les évolutions du projet sont documentées dans ce fichier.
-
-Le format s'inspire du standard *Keep a Changelog*.
+Toutes les évolutions importantes du projet **Ohanna-House** sont documentées dans ce fichier.
 
 ---
 
-# v0.1 "Iruka"
+## [0.1.0] - Iruka
 
-## Ajout
+### Ajouts
 
-- Création du dépôt GitHub.
-- Définition de l'architecture documentaire.
-- Validation de la charte documentaire.
-- Définition des conventions de rédaction.
-- Définition des conventions de versionnement.
-- Création de l'arborescence du dépôt.
-- Validation de README.md.
-- Validation de Architecture.md.
-
----
-
-# v0.5 "Kakashi"
-
-À venir.
-
----
-
-# v1.0 "Naruto"
-
-À venir.
+- Création du dépôt GitHub
+- Mise en place de l'architecture documentaire
+- Rédaction du README
+- Rédaction de `Architecture.md`
+- Rédaction de `Topologie-Reseau.md`
+- Rédaction de `Architecture-Logique.md`
+- Rédaction de `Inventaire.md`
+- Création des diagrammes Mermaid :
+  - DGM-001 Architecture physique
+  - DGM-002 Topologie réseau
+  - DGM-003 Architecture logique
+  - DGM-004 Flux MQTT
+  - DGM-005 Flux Z-Wave
+  - DGM-006 Flux DNS / WireGuard
+- Création des standards :
+  - Documentation
+  - Versioning
+  - Nommage

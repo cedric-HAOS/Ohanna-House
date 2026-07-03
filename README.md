@@ -87,4 +87,6 @@ Chaque document possède une responsabilité unique.
 
 ## Licence
 
-Usage privé.
+Le projet est actuellement hébergé dans un dépôt GitHub public afin de faciliter sa rédaction et ses revues.
+
+À terme, le dépôt redeviendra privé une fois la version 1.0 publiée.

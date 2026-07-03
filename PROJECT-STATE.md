@@ -1,57 +1,40 @@
-# Ohanna-House
+# État du projet
 
-Version
+Version actuelle
 
-0.1 Iruka
-
-Progression
-
-██████░░░░░░░░░░░░░░ 30 %
+v0.1 — Iruka
 
 ---
 
-## Documentation
+## Documents validés
 
-Architecture          ✅
-
-Topologie             ✅
-
-Architecture logique  ✅
-
-Inventaire            ✅
-
-Adressage IP          ⏳
-
-Capacités réseau      ⏳
-
-Freebox               ⏳
-
-...
+- ✅ README
+- ✅ Architecture
+- ✅ Topologie réseau
+- ✅ Architecture logique
+- ✅ Inventaire
 
 ---
 
 ## Diagrammes
 
-DGM-001 ✅
-
-DGM-002 ✅
-
-...
-
----
-
-## Procédures
-
-Aucune
+- ✅ DGM-001
+- ✅ DGM-002
+- ✅ DGM-003
+- ✅ DGM-004
+- ✅ DGM-005
+- ✅ DGM-006
 
 ---
 
-## Dernier commit
+## Standards
 
-v0.1 Iruka
+- ✅ Documentation
+- ✅ Versioning
+- ✅ Nommage
 
 ---
 
-## Prochaine étape
+## Document en préparation
 
-Adressage-IP.md
+➡️ Adressage-IP.md
