@@ -1,7 +1,11 @@
-Version actuelle
+## Release stable
 
 v1.0.0-Naruto
 
-État
+## Branche de développement
 
-Stable
+hashirama
+
+## Prochaine release
+
+v2.0.0-Hashirama
