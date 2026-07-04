@@ -1,53 +1,155 @@
 # Configurer WireGuard (Freebox)
 
-...
+| Élément | Valeur |
+|---------|--------|
+| Projet | Ohanna-House |
+| Procédure | Configurer WireGuard (Freebox) |
+| Version | 1.0 |
+| Niveau de qualité | 🟣 Référence |
+| Dernière mise à jour | 04/07/2026 |
+
+> ℹ️ **Information**
+>
+> Cette procédure décrit la configuration du serveur **WireGuard** intégré à la **Freebox Pop**.
+>
+> Elle couvre uniquement la configuration du serveur VPN.
+> La configuration des équipements utilisant le VPN est décrite dans **Configurer-Clients-VPN.md**.
+
+---
+
+# 1. Objectif
+
+Configurer le serveur WireGuard de la Freebox Pop afin de permettre un accès distant sécurisé à l'infrastructure Ohanna-House.
+
+---
+
+# 2. Contexte
+
+Utiliser cette procédure :
+
+- lors de la première mise en service du VPN ;
+- après une réinitialisation de la Freebox Pop ;
+- après une reconstruction de l'infrastructure ;
+- après une modification de la configuration VPN.
+
+---
+
+# 3. Prérequis
+
+Les éléments suivants sont nécessaires :
+
+- Freebox Pop opérationnelle.
+- Accès administrateur à Freebox OS.
+- Réseau local fonctionnel.
+- Accès Internet opérationnel.
+
+---
+
+# 4. Niveau de risque
+
+| Élément | Valeur |
+|---------|--------|
+| Risque | Faible |
+
+---
+
+# 5. Impact
+
+| Élément | Valeur |
+|---------|--------|
+| Interruption de service | Oui |
+| Impact utilisateur | Faible |
+| Fenêtre de maintenance recommandée | Oui |
+
+---
 
 # 6. Procédure
 
 ## Étape 1
 
-Activer le serveur WireGuard sur la Freebox Pop.
+Accéder à **Freebox OS**.
 
 ---
 
 ## Étape 2
 
-Créer les profils VPN.
+Activer le serveur **WireGuard**.
 
 ---
 
 ## Étape 3
 
-Exporter les configurations.
+Configurer les paramètres du serveur conformément au document **WireGuard.md**.
 
 ---
 
 ## Étape 4
 
-Tester une connexion VPN.
+Créer les profils VPN nécessaires.
 
 ---
 
 ## Étape 5
 
-Contrôler l'accès à Home Assistant.
+Exporter les profils VPN.
+
+---
+
+## Étape 6
+
+Enregistrer la configuration.
+
+---
+
+## Étape 7
+
+Vérifier le bon fonctionnement du serveur WireGuard.
+
+---
 
 # 7. Configuration appliquée
 
-| Élément | Document |
-|----------|----------|
-| WireGuard | WireGuard.md |
-| Freebox | Freebox-Pop.md |
+| Élément | Valeur |
+|----------|--------|
+| Serveur VPN | WireGuard |
+| Plateforme | Freebox Pop |
+| Profils VPN | Créés |
+| Configuration | Conforme à WireGuard.md |
+
+---
 
 # 8. Vérifications
 
-- [ ] VPN opérationnel
-- [ ] Accès distant à HA-01
-- [ ] Routage correct
-- [ ] Aucun message d'erreur
+Vérifier les points suivants :
+
+- [ ] Le serveur WireGuard est actif.
+- [ ] Les profils VPN sont disponibles.
+- [ ] Les profils peuvent être exportés.
+- [ ] Le serveur écoute correctement.
+- [ ] Aucun message d'erreur n'est présent dans Freebox OS.
+
+---
+
+# 9. Retour arrière
+
+En cas d'échec :
+
+- vérifier la configuration du serveur WireGuard ;
+- vérifier la connectivité Internet de la Freebox ;
+- supprimer et recréer les profils VPN si nécessaire ;
+- reprendre la procédure depuis le début.
+
+---
 
 # 10. Documents associés
 
+## Documents d'exploitation
+
 - WireGuard.md
 - Freebox-Pop.md
-- Configurer-Clients-VPN.md *(à rédiger)*
+
+## Procédures
+
+- Configurer-Clients-VPN.md
+- Sauvegarder-Freebox.md
+- Restaurer-Freebox.md
