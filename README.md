@@ -187,6 +187,23 @@ Les diagrammes officiels sont rédigés en Mermaid et stockés dans le dossier `
 
 ---
 
+## Documents de pilotage
+
+Les documents suivants sont placés à la racine du dépôt afin de faciliter l'exploitation de l'infrastructure :
+
+| Document | Rôle |
+|-----------|------|
+| START-HERE.md | Point d'entrée de la documentation |
+| README.md | Présentation du projet |
+| PROJECT-STATE.md | État actuel du projet |
+| ROADMAP.md | Évolutions prévues |
+| CHANGELOG.md | Historique des évolutions |
+| Guide-de-Reconstruction.md | Reconstruction complète de l'infrastructure |
+| Chemin-Critique-de-Reconstruction.md | Checklist de reconstruction |
+| Validation-Finale.md | Validation de l'infrastructure |
+
+---
+
 ## Licence
 
 Ce projet est distribué sous licence MIT .

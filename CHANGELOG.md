@@ -1,53 +1,20 @@
-# Changelog
+## [1.0.0-Naruto]
 
-Toutes les évolutions importantes du projet sont documentées dans ce fichier.
+### Ajout
 
----
+- Documents d'exploitation
+- Procédures d'installation
+- Procédures de configuration
+- Procédures de sauvegarde
+- Procédures de maintenance
+- Procédures de restauration
+- Guide de reconstruction
+- Chemin critique de reconstruction
+- Validation finale
+- START-HERE.md
 
-# v0.5.0 — Kakashi
+### Amélioration
 
-## Ajouts
-
-### Infrastructure réseau
-
-- Documentation Freebox Pop
-- Documentation Switches
-- Documentation Linksys LAPAC1750
-
-### Standards
-
-- Fiche d'identité des équipements
-- Historique fonctionnel
-- Chaîne réseau
-
----
-
-# v0.1.0 — Iruka
-
-## Ajouts
-
-### Documentation
-
-- README
-- Architecture
-- Topologie réseau
-- Architecture logique
-- Inventaire
-- Adressage IP
-- Capacités réseau
-- Décisions d'architecture
-
-### Diagrammes
-
-- DGM-001
-- DGM-002
-- DGM-003
-- DGM-004
-- DGM-005
-- DGM-006
-
-### Standards
-
-- Documentation
-- Versioning
-- Nommage
+- Standardisation complète des procédures
+- Harmonisation de la documentation
+- Structuration du cycle de vie des composants

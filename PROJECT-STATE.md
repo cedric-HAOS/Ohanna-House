@@ -1,101 +1,39 @@
 # État du projet
 
-## Projet
+## Version
 
-**Nom :** Ohanna-House
+Naruto (pré-version 1.0)
 
-**Version actuelle :** v1.0.0-dev (Naruto)
+## Avancement
 
-**Dernière release :** v0.5.0 – Kakashi
+### Documents d'exploitation
 
----
+- ✅ Terminés
 
-# Progression
+### Procédures d'installation
 
-## Standards
+- ✅ Terminées
 
-| Document | État |
-|----------|:----:|
-| Documentation | ✅ |
-| Nommage | ✅ |
-| Versioning | ✅ |
+### Procédures de configuration
 
----
+- ✅ Terminées
 
-## Architecture
+### Procédures de sauvegarde
 
-| Document | État |
-|----------|:----:|
-| Architecture | ✅ |
-| Topologie Réseau | ✅ |
-| Architecture Logique | ✅ |
-| Inventaire | ✅ |
-| Adressage IP | ✅ |
-| Capacités Réseau | ✅ |
-| Décisions d'Architecture | ✅ |
+- ✅ Terminées
 
----
+### Procédures de maintenance
 
-## Réseau
+- ✅ Terminées
 
-| Document | État |
-|----------|:----:|
-| Freebox Pop | ✅ |
-| Switches | ✅ |
-| Linksys LAPAC1750 | ✅ |
+### Procédures de restauration
 
----
+- ✅ Terminées
 
-## Services
+### Guides de reconstruction
 
-| Document | État |
-|----------|:----:|
-| AdGuard Home | ✅ |
-| WireGuard | ✅ |
-| Mosquitto | ✅ |
+- ✅ Terminés
 
----
+## État global
 
-## Home Assistant
-
-| Document | État |
-|----------|:----:|
-| Home Assistant Green | ✅ |
-| Raspberry Pi Linky | ✅ |
-| Raspberry Pi Z-Wave | ✅ |
-
----
-
-# Procédures
-
-## Installation
-
-| Procédure | État |
-|-----------|:----:|
-| Installer Home Assistant OS | ✅ |
-| Installer Home Assistant Green | ✅ |
-| Installer Mosquitto | ✅ |
-| Installer AdGuard Home | ⏳ |
-
----
-
-## Configuration
-
-| Procédure | État |
-|-----------|:----:|
-| Configurer Home Assistant Green | ⏳ |
-| Configurer Mosquitto | ⏳ |
-| Configurer Raspberry Pi Linky | ⏳ |
-| Configurer Raspberry Pi Z-Wave | ⏳ |
-| Configurer AdGuard Home | ⏳ |
-| Configurer WireGuard (Freebox Pop) | ⏳ |
-
----
-
-# État général
-
-| Domaine | État |
-|----------|:----:|
-| Documentation | 🟢 Stable |
-| Architecture | 🟢 Stable |
-| Procédures | 🟡 En cours |
+Le projet est prêt pour le Grand Audit Naruto avant publication de la version 1.0.
