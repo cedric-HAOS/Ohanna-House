@@ -12,12 +12,12 @@
 
 # Ohanna-House
 
-Documentation technique de l'infrastructure informatique et domotique de la maison.
+Architecture, documentation et exploitation de l'infrastructure informatique et domotique d'Ohanna-House.
 
-![Version](https://img.shields.io/badge/version-v0.1%20Iruka-blue)
-![Documentation](https://img.shields.io/badge/documentation-35%25-green)
-![Status](https://img.shields.io/badge/status-active-orange)
-![Branch](https://img.shields.io/badge/branch-main-purple)
+![Version](https://img.shields.io/badge/version-v2.0%20Hashirama-blue)
+![Documentation](https://img.shields.io/badge/documentation-45%25-green)
+![Status](https://img.shields.io/badge/status-architecture--phase-orange)
+![Branch](https://img.shields.io/badge/branch-hashirama-purple)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 </div>
@@ -39,6 +39,10 @@ Ce dépôt décrit :
 
 L'objectif est de garantir qu'à tout moment, l'installation puisse être comprise, maintenue, restaurée et faire évoluer sans dépendre uniquement de la mémoire de son administrateur.
 
+Depuis la version **Hashirama**, le projet ne documente plus uniquement l'infrastructure.
+
+Il définit également son architecture de référence, ses principes de conception ainsi que les décisions d'architecture (ADR) qui guideront toutes les évolutions futures.
+
 ---
 
 ## Sommaire
@@ -48,6 +52,7 @@ L'objectif est de garantir qu'à tout moment, l'installation puisse être compri
 - [Documents principaux](#documents-principaux)
 - [Diagrammes](#diagrammes)
 - [Feuille de route](#feuille-de-route)
+- [Architecture de référence](#architecture-de-référence)
 
 ---
 
@@ -60,6 +65,20 @@ L'objectif est de garantir qu'à tout moment, l'installation puisse être compri
 | Domotique | Home Assistant, MQTT, Z-Wave, Linky |
 | Procédures | Sauvegardes, restaurations, maintenance |
 | Standards | Versioning, nommage, rédaction documentaire |
+
+---
+
+## Architecture de référence
+
+La phase **Hashirama** introduit une architecture de référence décrivant :
+
+- les capacités attendues de la maison ;
+- les responsabilités de chaque machine ;
+- les conventions d'architecture ;
+- les principes de résilience ;
+- les décisions d'architecture (ADR).
+
+Cette architecture constitue désormais la référence pour toutes les futures évolutions d'Ohanna-House.
 
 ---
 
@@ -156,6 +175,11 @@ Cette organisation garantit que chaque opération est documentée de manière in
 
 - `docs/home-assistant/Home-Assistant-Green.md`
 
+### Hashirama
+
+- Architecture-Reference.md
+- Architecture-Conventions.md
+
 ---
 
 ## Diagrammes
@@ -175,15 +199,11 @@ Les diagrammes officiels sont rédigés en Mermaid et stockés dans le dossier `
 
 ## Feuille de route
 
-| Phase | Nom | Statut |
-|------|-----|--------|
-| v0.1 | Iruka | En cours |
-| v0.5 | Kakashi | Prévu |
-| v1.0 | Naruto | Prévu |
-| v1.1 | Yamato | Prévu |
-| v1.2 | Shikamaru | Prévu |
-| v1.3 | Tsunade | Prévu |
-| v2.0 | Hashirama | Prévu |
+| Version | Nom          | Statut              |
+| ------- | ------------ | ------------------- |
+| v1.0    | Naruto       | ✅ Stable            |
+| v2.0    | Hashirama    | 🟡 En développement |
+| v3.0    | Ohanna-Agent | ⚪ Vision            |
 
 ---
 
