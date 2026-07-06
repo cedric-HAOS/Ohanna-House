@@ -48,11 +48,11 @@ Il définit également son architecture de référence, ses principes de concept
 ## Sommaire
 
 - [Vue d'ensemble](#vue-densemble)
+- [Architecture de référence](#architecture-de-référence)
 - [Structure du dépôt](#structure-du-dépôt)
 - [Documents principaux](#documents-principaux)
 - [Diagrammes](#diagrammes)
 - [Feuille de route](#feuille-de-route)
-- [Architecture de référence](#architecture-de-référence)
 
 ---
 
@@ -60,11 +60,11 @@ Il définit également son architecture de référence, ses principes de concept
 
 | Domaine | Description |
 |--------|-------------|
-| Architecture | Description complète de l'infrastructure physique et logique |
-| Réseau | Freebox Pop, switchs, Wi-Fi, DNS, WireGuard |
-| Domotique | Home Assistant, MQTT, Z-Wave, Linky |
-| Procédures | Sauvegardes, restaurations, maintenance |
-| Standards | Versioning, nommage, rédaction documentaire |
+| Architecture | Architecture de référence, missions, capacités et décisions |
+| Réseau | Freebox Pop, switchs, Wi-Fi, DNS, DHCP, NTP, WireGuard |
+| Domotique | Home Assistant, MQTT, Z-Wave, Linky, Shelly, ESPHome |
+| Procédures | Installation, configuration, sauvegarde, maintenance, restauration |
+| Standards | Conventions, nommage, adressage, ADR |
 
 ---
 
@@ -92,6 +92,11 @@ Ohanna-House/
 ├── ROADMAP.md
 ├── PROJECT-STATE.md
 ├── LICENSE
+├── HASHIRAMA.md
+├── Architecture-Reference.md
+├── Architecture-Conventions.md
+│
+├── adr/
 │
 ├── docs/
 │   ├── architecture/
@@ -177,8 +182,10 @@ Cette organisation garantit que chaque opération est documentée de manière in
 
 ### Hashirama
 
-- Architecture-Reference.md
-- Architecture-Conventions.md
+- `HASHIRAMA.md`
+- `Architecture-Reference.md`
+- `Architecture-Conventions.md`
+- `adr/`
 
 ---
 
@@ -221,6 +228,10 @@ Les documents suivants sont placés à la racine du dépôt afin de faciliter l'
 | Guide-de-Reconstruction.md | Reconstruction complète de l'infrastructure |
 | Chemin-Critique-de-Reconstruction.md | Checklist de reconstruction |
 | Validation-Finale.md | Validation de l'infrastructure |
+| HASHIRAMA.md | Vision de la phase Hashirama |
+| Architecture-Reference.md | Architecture de référence |
+| Architecture-Conventions.md | Conventions d'architecture |
+| adr/ | Décisions d'architecture |
 
 ---
 

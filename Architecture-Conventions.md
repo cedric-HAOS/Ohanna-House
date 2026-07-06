@@ -1,93 +1,112 @@
-# Conventions
+# Architecture Conventions
 
 > Ce document définit les conventions utilisées dans l'ensemble du projet Ohanna-House.
 
 ---
 
-# 1. Conventions de nommage
+# 1. Modèle architectural
 
-Les équipements sont nommés selon leur fonction et non selon leur constructeur.
+L'ensemble des documents Hashirama repose sur trois niveaux :
+
+Mission
+↓
+Capacité
+↓
+Implémentation
+
+Les décisions d'architecture portent sur les missions et les capacités.
+
+Les implémentations sont documentées dans Naruto.
+
+Les ADR décrivent :
+
+- les missions ;
+- les capacités.
+
+Naruto décrit :
+
+- les implémentations.
+
+---
+
+# 2. Conventions de nommage
+
+Les équipements sont nommés selon leur fonction.
+Les noms restent indépendants du constructeur, du modèle et des technologies utilisées.
+Le remplacement d'un constructeur, d'un modèle ou d'une technologie ne modifie pas le nom fonctionnel de l'équipement.
 
 Exemple :
 
-AP-01
+Freebox
+↓
 
-et non :
+OpenWRT
 
-Linksys-LAPAC1750
+BOX-01 reste BOX-01.
 
 ---
 
 # Préfixes
 
-| Préfixe | Description |
-|----------|-------------|
-| BOX | Routeur Internet |
-| HA | Home Assistant |
-| INFRA | Infrastructure réseau |
-| AP | Point d'accès Wi-Fi |
-| SW | Switch |
-| LINKY | Téléinformation |
-| ZWAVE | Passerelle Z-Wave |
-| ZIGBEE | Passerelle Zigbee |
-| MATTER | Passerelle Matter |
-| VELUX | Passerelle Velux |
-| PV | Onduleur photovoltaïque |
-| SH | Shelly |
-| ESP | ESPHome |
-| CAM | Caméra |
-| NAS | NAS |
-| PRN | Imprimante |
+| Préfixe  | Description              |
+|----------|--------------------------|
+| BOX      | Routeur Internet         |
+| HA       | Home Assistant           |
+| INFRA    | Infrastructure réseau    |
+| AP       | Point d'accès Wi-Fi      |
+| SW       | Switch                   |
+| LINKY    | Téléinformation          |
+| ZWAVE    | Passerelle Z-Wave        |
+| ZIGBEE   | Passerelle Zigbee        |
+| MATTER   | Passerelle Matter        |
+| VELUX    | Passerelle Velux         |
+| PV       | Onduleur photovoltaïque  |
+| SH       | Shelly                   |
+| ESP      | ESPHome                  |
+| CAM      | Caméra                   |
+| NAS      | NAS                      |
+| PRN      | Imprimante               |
 
 ---
 
-# 2. Plan d'adressage
+# 3. Plan d'adressage
 
-| Plage | Fonction |
-|------:|----------|
-| .10-.19 | Services d'infrastructure |
-| .20-.29 | Serveurs domotiques |
-| .30-.39 | Infrastructure réseau |
-| .40-.49 | Passerelles domotiques |
-| .50-.99 | Équipements critiques |
-| .100-.199 | DHCP dynamique |
+Les plages sont définies par fonction et non par technologie.
 
----
-
-# 3. Convention des ADR
-
-Nom :
-
-ADR-XXX-Titre.md
-
-Exemple :
-
-ADR-001-Autonomie-Locale.md
+| Plage     | Fonction                   |
+|-----------|----------------------------|
+| .10-.19   | Services d'infrastructure  |
+| .20-.29   | Serveurs domotiques        |
+| .30-.39   | Infrastructure réseau      |
+| .40-.49   | Passerelles domotiques     |
+| .50-.99   | Équipements critiques      |
+| .100-.199 | DHCP dynamique             |
 
 ---
 
-# 4. Convention documentaire
+# 4. Convention des ADR
 
-Chaque document comporte :
+Les ADR :
+
+- sont indépendants des technologies ;
+- décrivent des décisions d'architecture ;
+- ne documentent pas les procédures ;
+- restent stables dans le temps.
+
+Les logiciels et configurations sont documentés dans Naruto.
+
+---
+
+# 5. Convention documentaire
+
+Chaque document comporte, lorsque cela est pertinent :
 
 - un objectif ;
+- un contexte ;
 - un périmètre ;
 - un statut ;
-- une date de mise à jour.
-
----
-
-# 5. Convention des capacités
-
-Hashirama raisonne toujours par capacités.
-
-Jamais par logiciels.
-
-Exemple :
-
-✔ Résolution DNS
-
-❌ AdGuard
+- une date de mise à jour ;
+- des références vers les documents associés.
 
 ---
 
@@ -101,7 +120,7 @@ Exemple :
 
 ohanna/health
 
-ohanna/adguard/run
+ohanna/dns/sync
 
 ohanna/dhcp/state
 
@@ -114,10 +133,13 @@ Chaque plugin devra :
 - avoir une responsabilité unique ;
 - publier son état MQTT ;
 - répondre aux commandes standardisées ;
-- produire des journaux homogènes.
+- produire des journaux homogènes ;
+- superviser une capacité et non un logiciel.
 
 ---
 
 # Conclusion
 
-Les conventions garantissent la cohérence de l'ensemble des projets Ohanna-House, Hashirama et Ohanna-Agent.
+Les conventions définies dans ce document constituent les règles communes de conception de tous les projets de l'écosystème Ohanna-House.
+
+Toute nouvelle architecture, documentation ou évolution devra respecter ces conventions afin de garantir la cohérence de l'ensemble.

@@ -34,7 +34,25 @@ L'infrastructure doit continuer à assurer les fonctions essentielles même en c
 
 ---
 
-# 2. Principes d'architecture
+# 2. Modèle architectural
+
+L'architecture d'Ohanna-House repose sur trois niveaux complémentaires :
+
+Mission
+↓
+Capacité
+↓
+Implémentation
+
+Les missions décrivent le rôle principal de chaque machine.
+
+Les capacités décrivent les fonctions garanties par l'architecture.
+
+Les implémentations correspondent aux technologies retenues pour fournir ces capacités et sont documentées dans Naruto.
+
+---
+
+# 3. Principes d'architecture
 
 ## Principe 1
 
@@ -42,7 +60,7 @@ Les décisions sont prises en fonction des capacités offertes à la maison, et 
 
 ## Principe 2
 
-Chaque machine possède une responsabilité principale clairement identifiée.
+Chaque machine possède une mission principale clairement identifiée et peut fournir des capacités complémentaires lorsque cela améliore la résilience ou simplifie l'architecture.
 
 ## Principe 3
 
@@ -62,35 +80,35 @@ Les points de défaillance uniques sont acceptés uniquement lorsqu'ils sont doc
 
 ---
 
-# 3. Capacités
+# 4. Capacités
 
 ## Niveau 1 — Infrastructure
 
-- DHCP
-- DNS
-- NTP
-- Home Assistant
+- Attribution des adresses IP
+- Résolution DNS
+- Référence temporelle
+- Automatisation
 
-## Niveau 2 — Services domotiques
+## Niveau 2 — Capacités domotiques
 
-- MQTT
+- Communication domotique
 - Téléinformation
-- Z-Wave
-- Shelly
-- ESPHome
-- Velux
+- Pilotage Z-Wave
+- Pilotage Shelly
+- Pilotage ESPHome
+- Pilotage Velux
 
-## Niveau 3 — Services externes
+## Niveau 3 — Capacités externes
 
 - Internet
 - VPN
 - Notifications
-- Cloud
+- Service Cloud
 - Mises à jour
 
 ---
 
-# 4. Architecture cible
+# 5. Architecture cible
 
                      Internet
                          │
@@ -107,137 +125,56 @@ Les points de défaillance uniques sont acceptés uniquement lorsqu'ils sont doc
 
 ---
 
-# 5. Responsabilités
+# 6. Responsabilités
 
-## BOX-01
-
-Mission :
-
-Assurer la connectivité Internet.
-
----
-
-## HA-01
-
-Mission :
-
-Piloter la maison.
-
-Services :
-
-- Home Assistant
-- Mosquitto
+| Machine  | Mission principale    | Capacités complémentaires            |
+|----------|-----------------------|--------------------------------------|
+| BOX-01   | Connectivité Internet | NAT, Routage                         |
+| HA-01    | Automatisation        | Communication MQTT                   |
+| INFRA-01 | Infrastructure        | Administration, Supervision          |
+| ZWAVE-01 | Z-Wave                | Résolution DNS principale            |
+| LINKY-01 | Téléinformation       | Résolution DNS secondaire            |
 
 ---
 
-## INFRA-01
+## Capacités complémentaires
 
-Mission :
+### HA-01
 
-Garantir les services fondamentaux de l'infrastructure.
+- Communication MQTT
 
-Services :
+### INFRA-01
 
-- DHCP
-- NTP
-- Synchronisation AdGuard
+- Attribution des adresses IP
+- Référence temporelle
 - Supervision
-- Scripts d'administration
-- (Ohanna-Agent à terme)
+- Administration
+
+### ZWAVE-01
+
+- Résolution DNS principale
+
+### LINKY-01
+
+- Résolution DNS secondaire
 
 ---
 
-## ZWAVE-01
+# 7. Flux principaux
 
-Mission :
+Capacité : Pilotage des équipements
 
-Passerelle domotique principale.
+Capacité : Téléinformation
 
-Services :
+Capacité : Résolution DNS
 
-- Z-Wave JS UI
-- AdGuard (DNS principal)
+Capacité : Attribution des adresses IP
 
----
-
-## LINKY-01
-
-Mission :
-
-Acquérir les données énergétiques.
-
-Services :
-
-- Téléinformation
-- AdGuard (DNS secondaire)
+Capacité : Référence temporelle
 
 ---
 
-# 6. Flux principaux
-
-Pilotage des équipements
-
-HA-01
-
-↓
-
-MQTT / Z-Wave
-
-↓
-
-Équipements
-
----
-
-Téléinformation
-
-LINKY-01
-
-↓
-
-MQTT
-
-↓
-
-HA-01
-
----
-
-Résolution DNS
-
-Clients
-
-↓
-
-ZWAVE-01
-
-↓
-
-LINKY-01 (secours)
-
----
-
-DHCP
-
-Clients
-
-↓
-
-INFRA-01
-
----
-
-Temps
-
-INFRA-01
-
-↓
-
-Tous les équipements
-
----
-
-# 7. Plan d'adressage
+# 8. Plan d'adressage
 
 | Plage | Usage |
 |------:|-------|
@@ -253,31 +190,17 @@ Tous les équipements
 
 ---
 
-# 8. Paramètres réseau
+# 9. Paramètres réseau
 
-Passerelle :
-
-BOX-01
-
-DNS principal :
-
-ZWAVE-01
-
-DNS secondaire :
-
-LINKY-01
-
-DHCP :
-
-INFRA-01
-
-NTP :
-
-INFRA-01
+Passerelle : BOX-01
+DNS principal : ZWAVE-01
+DNS secondaire : LINKY-01
+Serveur DHCP : INFRA-01
+Serveur NTP : INFRA-01
 
 ---
 
-# 9. Dégradation maîtrisée
+# 10. Dégradation maîtrisée
 
 La perte d'un composant ne doit entraîner que la perte de la capacité assurée par celui-ci.
 
@@ -285,15 +208,12 @@ L'objectif est de maintenir le fonctionnement local de la maison aussi longtemps
 
 ---
 
-# 10. Documents associés
+# 11. Documents associés
 
-HASHIRAMA.md
-
-Conventions.md
-
-ADR
-
-Naruto
+- HASHIRAMA.md
+- Architecture-Conventions.md
+- ADR/
+- Documentation Naruto
 
 ---
 
@@ -301,4 +221,4 @@ Naruto
 
 Une architecture n'est pas définie par les logiciels qu'elle utilise.
 
-Elle est définie par les capacités qu'elle garantit.
+Elle est définie par les missions qu'elle remplit et les capacités qu'elle garantit.

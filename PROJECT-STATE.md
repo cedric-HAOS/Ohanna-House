@@ -24,13 +24,29 @@ v2.0.0 — Hashirama
 |----------|------------:|
 | Vision | 100 % |
 | Architecture de référence | 100 % |
-| Conventions | 100 % |
-| ADR | 0 % |
-| Déploiement | 0 % |
-| Validation | 0 % |
+| Conventions d'architecture | 100 % |
+| ADR fondateurs | 100 % |
+| Consolidation documentaire | 100 % |
+| Déploiement de l'infrastructure | 0 % |
+| Validation de l'architecture | 0 % |
+
+---
+
+## Derniers jalons atteints
+
+- ✅ Architecture-Reference.md validé
+- ✅ Architecture-Conventions.md validé
+- ✅ ADR-001 à ADR-007 validés
+- ✅ Sprint de consolidation documentaire terminé
 
 ---
 
 ## Prochaine étape
 
-Rédaction des Architecture Decision Records (ADR).
+Déploiement de l'architecture Hashirama :
+
+- mise en place d'INFRA-01 ;
+- déploiement du DHCP ;
+- déploiement du serveur NTP ;
+- synchronisation des serveurs DNS ;
+- mise en œuvre de la supervision.
