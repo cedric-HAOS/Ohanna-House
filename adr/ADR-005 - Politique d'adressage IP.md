@@ -107,9 +107,26 @@ Les plages sont définies selon le rôle des équipements et non selon leur tech
 
 ## Réservations DHCP
 
-Les équipements critiques utilisent des réservations DHCP.
+Les équipements critiques, y compris les serveurs de l'infrastructure, utilisent des réservations DHCP.
 
 L'utilisation d'adresses IP configurées manuellement est limitée aux cas où une réservation DHCP n'est pas possible.
+
+---
+
+## Réservations DHCP pour les serveurs
+
+Les serveurs de l'infrastructure suivent la même politique d'adressage que les autres équipements critiques.
+
+Leur adresse IP est attribuée par le serveur DHCP au moyen d'une réservation basée sur leur adresse MAC.
+
+Aucune adresse IP statique n'est configurée dans le système d'exploitation, sauf impossibilité technique.
+
+Cette approche facilite :
+
+- le remplacement d'un routeur ;
+- l'évolution du plan d'adressage ;
+- la reconstruction d'un serveur ;
+- la cohérence de l'ensemble de l'infrastructure.
 
 ---
 

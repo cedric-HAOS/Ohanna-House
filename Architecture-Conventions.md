@@ -97,7 +97,18 @@ Les logiciels et configurations sont documentés dans Naruto.
 
 ---
 
-# 5. Convention documentaire
+# 5. Standard doumentaire
+
+| Étape                | Objectif                                 |
+| -------------------- | ---------------------------------------- |
+| Installer            | Installer les logiciels nécessaires      |
+| Configurer           | Préparer la configuration                |
+| Mettre en production | Activer la capacité sur l'infrastructure |
+| Sauvegarder          | Sauvegarder la capacité                  |
+| Restaurer            | Restaurer la capacité                    |
+| Maintenir            | Exploitation courante                    |
+
+# 6. Convention documentaire
 
 Chaque document comporte, lorsque cela est pertinent :
 
@@ -110,7 +121,59 @@ Chaque document comporte, lorsque cela est pertinent :
 
 ---
 
-# 6. Convention MQTT (future)
+# 7. Convention d'installation des logiciels tiers
+
+Les logiciels installés en dehors des dépôts officiels de Debian sont placés dans le répertoire :
+
+```text
+/opt
+```
+
+Chaque logiciel dispose de son propre sous-répertoire.
+
+Exemple :
+
+```text
+/opt/
+├── adguardhome-sync/
+├── ohanna-agent/
+└── ...
+```
+
+Chaque répertoire contient :
+
+- le binaire ;
+- les fichiers de configuration ;
+- les scripts éventuels ;
+- les fichiers propres à l'application.
+
+Les services systemd utilisent directement ce répertoire comme répertoire de travail.
+
+Cette convention garantit :
+
+- une séparation claire entre le système et les logiciels tiers ;
+- une sauvegarde simplifiée ;
+- une restauration facilitée ;
+- une meilleure lisibilité de l'infrastructure.
+
+---
+
+# 8. Convention des informations sensibles
+
+La documentation Ohanna-House ne contient jamais :
+
+- de mots de passe ;
+- de clés API ;
+- de certificats privés ;
+- de secrets.
+
+Les procédures indiquent uniquement où ces informations doivent être renseignées.
+
+Les secrets sont stockés directement sur les machines concernées selon les mécanismes propres à chaque application.
+
+---
+
+# 9. Convention MQTT (future)
 
 Tous les topics utiliseront le préfixe :
 
@@ -126,7 +189,7 @@ ohanna/dhcp/state
 
 ---
 
-# 7. Convention Ohanna-Agent (future)
+# 10. Convention Ohanna-Agent (future)
 
 Chaque plugin devra :
 
