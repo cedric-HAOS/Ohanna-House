@@ -209,7 +209,7 @@ Les diagrammes officiels sont rédigés en Mermaid et stockés dans le dossier `
 | Version | Nom          | Statut              |
 | ------- | ------------ | ------------------- |
 | v1.0    | Naruto       | ✅ Stable            |
-| v2.0    | Hashirama    | 🟡 En développement |
+| v2.0    | Hashirama    | ✅ Stable    |
 | v3.0    | Ohanna-Agent | ⚪ Vision            |
 
 ---
