@@ -1,29 +1,67 @@
 # Roadmap
 
-## Version actuelle
+## Version stable
 
-### Naruto
+### Naruto (v1.0)
 
-- ✅ Documents d'exploitation
+- ✅ Documentation complète
+- ✅ Procédures d'exploitation
 - ✅ Procédures d'installation
 - ✅ Procédures de configuration
-- ✅ Procédures de sauvegarde
 - ✅ Procédures de maintenance
+- ✅ Procédures de sauvegarde
 - ✅ Procédures de restauration
 - ✅ Guide de reconstruction
-- ✅ Chemin critique de reconstruction
 - ✅ Validation finale
 
 ---
 
-## Prochaine version
+## Développement en cours
 
-### Hashirama
+### Hashirama (v2.0)
 
-Évolutions envisagées :
+Objectif :
 
-- Glossaire
+Définir l'architecture de référence de l'infrastructure.
+
+### Sprint 1 ✅
+
+- Vision
+- Architecture cible
+- Architecture-Reference.md
+- Architecture-Conventions.md
+- Modèle Mission → Capacité → Implémentation
+- INFRA-01
+- DHCP
+- DNS
+- NTP
+- Synchronisation DNS
+- Plan d'adressage
+- Convention de nommage
+
+### Sprint 2 ✅
+
+- ADR-001 à ADR-007
+- Supervision par capacités
 - Politique de sauvegarde
-- Procédures de migration
-- Validation des services
-- Amélioration continue de la documentation
+- Politique de mise à jour
+- Consolidation documentaire
+
+### Sprint 3 🟡
+
+- Déploiement d'INFRA-01
+- Déploiement DHCP
+- Déploiement NTP
+- Synchronisation DNS
+- Supervision
+- Validation de l'architecture
+
+---
+
+## Vision
+
+### Ohanna-Agent (v3.0)
+
+Projet logiciel destiné à superviser, administrer et orchestrer les capacités de l'infrastructure Ohanna-House.
+
+Ohanna-Agent constitue l'évolution naturelle de l'architecture définie par Hashirama.
