@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Mosquitto |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit le broker MQTT Mosquitto utilisé dans l'infrastructure **Ohanna-House**.
+Ce document décrit le broker MQTT Mosquitto utilisé dans l'infrastructure **Ohana-House**.
 
 Mosquitto assure les échanges de messages entre les différents équipements de l'infrastructure et Home Assistant.
 

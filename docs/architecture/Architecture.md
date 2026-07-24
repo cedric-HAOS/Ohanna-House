@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Architecture de l'infrastructure |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document présente l'architecture générale de l'infrastructure informatique et domotique d'**Ohanna-House**.
+Ce document présente l'architecture générale de l'infrastructure informatique et domotique d'**Ohana-House**.
 
 Il constitue le document de référence du projet et décrit les grands principes d'organisation de l'infrastructure.
 

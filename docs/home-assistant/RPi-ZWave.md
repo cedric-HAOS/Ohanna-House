@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Raspberry Pi Z-Wave |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit le Raspberry Pi dédié au réseau Z-Wave de l'infrastructure **Ohanna-House**.
+Ce document décrit le Raspberry Pi dédié au réseau Z-Wave de l'infrastructure **Ohana-House**.
 
 Cette machine est exclusivement utilisée pour héberger le serveur Z-Wave JS UI et piloter le contrôleur Z-Wave.
 

@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Décisions d'architecture |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document recense les principales décisions d'architecture retenues pour l'infrastructure **Ohanna-House**.
+Ce document recense les principales décisions d'architecture retenues pour l'infrastructure **Ohana-House**.
 
 Il explique les motivations techniques ayant conduit à ces choix.
 

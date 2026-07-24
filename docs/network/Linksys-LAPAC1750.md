@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Linksys LAPAC1750 |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit le point d'accès Wi-Fi de l'infrastructure **Ohanna-House**.
+Ce document décrit le point d'accès Wi-Fi de l'infrastructure **Ohana-House**.
 
 Le point d'accès assure la connectivité sans fil des équipements nécessitant un accès Wi-Fi.
 

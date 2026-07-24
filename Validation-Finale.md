@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Vérifier que l'ensemble de l'infrastructure Ohanna-House est opérationnel après une reconstruction ou une intervention majeure.
+Vérifier que l'ensemble de l'infrastructure Ohana-House est opérationnel après une reconstruction ou une intervention majeure.
 
 ---
 

@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Configurer Raspberry Pi Z-Wave |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |

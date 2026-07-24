@@ -3,14 +3,14 @@
 ```text
 ╔══════════════════════════════════════════════════════╗
 ║                                                      ║
-║                  OHANNA-HOUSE                        ║
+║                  OHANA-HOUSE                        ║
 ║                                                      ║
 ║        Home Infrastructure Documentation             ║
 ║                                                      ║
 ╚══════════════════════════════════════════════════════╝
 ```
 
-# Ohanna-House
+# Ohana-House
 
 Documentation technique de l'infrastructure informatique et domotique de la maison.
 
@@ -26,7 +26,7 @@ Documentation technique de l'infrastructure informatique et domotique de la mais
 
 ## Présentation
 
-**Ohanna-House** est le référentiel de documentation technique de l'infrastructure informatique et domotique de la maison.
+**Ohana-House** est le référentiel de documentation technique de l'infrastructure informatique et domotique de la maison.
 
 Ce dépôt décrit :
 
@@ -66,7 +66,7 @@ L'objectif est de garantir qu'à tout moment, l'installation puisse être compri
 ## Structure du dépôt
 
 ```text
-Ohanna-House/
+Ohana-House/
 │
 ├── README.md
 ├── CHANGELOG.md

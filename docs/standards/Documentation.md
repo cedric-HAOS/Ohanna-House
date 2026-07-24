@@ -234,7 +234,7 @@ Elle utilise la structure suivante :
 
 ### Procédure de configuration
 
-Une procédure de configuration décrit les opérations permettant d'appliquer la configuration de référence d'Ohanna-House à un composant.
+Une procédure de configuration décrit les opérations permettant d'appliquer la configuration de référence d'Ohana-House à un composant.
 
 Elle utilise la structure suivante :
 

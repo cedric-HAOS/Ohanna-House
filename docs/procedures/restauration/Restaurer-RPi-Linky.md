@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Restaurer Raspberry Pi Linky |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 >
 > Cette procédure décrit la reconstruction complète de l'instance **RPI-Linky** après une perte totale ou un remplacement du Raspberry Pi.
 >
-> La restauration est réalisée en appliquant les procédures d'installation et de configuration de référence d'Ohanna-House.
+> La restauration est réalisée en appliquant les procédures d'installation et de configuration de référence d'Ohana-House.
 
 ---
 

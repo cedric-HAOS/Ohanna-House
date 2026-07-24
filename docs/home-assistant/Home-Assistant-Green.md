@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Home Assistant Green |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit l'instance principale **Home Assistant Green** de l'infrastructure **Ohanna-House**.
+Ce document décrit l'instance principale **Home Assistant Green** de l'infrastructure **Ohana-House**.
 
 HA-01 constitue le cœur du système domotique. Il centralise les données, orchestre les interactions entre les différents composants de l'infrastructure et fournit les services nécessaires au pilotage de l'habitation.
 

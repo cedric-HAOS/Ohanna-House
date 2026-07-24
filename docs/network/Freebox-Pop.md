@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Freebox Pop |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit la configuration de la Freebox Pop utilisée comme routeur principal de l'infrastructure **Ohanna-House**.
+Ce document décrit la configuration de la Freebox Pop utilisée comme routeur principal de l'infrastructure **Ohana-House**.
 
 La Freebox constitue le point d'entrée du réseau domestique et assure les services indispensables au fonctionnement de l'infrastructure.
 

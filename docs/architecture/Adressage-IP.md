@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Adressage IP |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit le plan d'adressage IPv4 de l'infrastructure **Ohanna-House**.
+Ce document décrit le plan d'adressage IPv4 de l'infrastructure **Ohana-House**.
 
 Il recense les plages d'adresses utilisées, les réservations DHCP ainsi que les conventions retenues pour l'attribution des adresses IP.
 

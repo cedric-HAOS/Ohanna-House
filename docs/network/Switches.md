@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Switches |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit les switchs Ethernet utilisés dans l'infrastructure **Ohanna-House**.
+Ce document décrit les switchs Ethernet utilisés dans l'infrastructure **Ohana-House**.
 
 Ils assurent la distribution du réseau local entre la Freebox Pop, les équipements domotiques et le point d'accès Wi-Fi.
 

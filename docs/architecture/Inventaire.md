@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Inventaire |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |

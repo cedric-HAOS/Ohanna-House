@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Configurer les clients DNS |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -10,7 +10,7 @@
 
 > ℹ️ **Information**
 >
-> Cette procédure décrit la configuration des équipements utilisant le serveur **AdGuard Home** de l'infrastructure Ohanna-House.
+> Cette procédure décrit la configuration des équipements utilisant le serveur **AdGuard Home** de l'infrastructure Ohana-House.
 >
 > Elle ne couvre pas la configuration du serveur AdGuard Home, décrite dans **Configurer-AdGuard.md**.
 

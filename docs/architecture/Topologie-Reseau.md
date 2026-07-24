@@ -1,7 +1,7 @@
 # Topologie réseau
 
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Topologie réseau |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -11,7 +11,7 @@
 
 # 1. Introduction
 
-Ce document décrit la topologie physique du réseau informatique de l'infrastructure **Ohanna-House**.
+Ce document décrit la topologie physique du réseau informatique de l'infrastructure **Ohana-House**.
 
 Il présente les équipements réseau, leurs interconnexions ainsi que les capacités des différentes liaisons.
 

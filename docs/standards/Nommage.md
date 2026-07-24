@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Ce document définit les conventions de nommage utilisées dans le projet **Ohanna-House**.
+Ce document définit les conventions de nommage utilisées dans le projet **Ohana-House**.
 
 Ces conventions garantissent une documentation homogène, facilitent la recherche d'informations et simplifient l'évolution de l'infrastructure.
 

@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Capacités réseau |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document présente les capacités du réseau de l'infrastructure **Ohanna-House**.
+Ce document présente les capacités du réseau de l'infrastructure **Ohana-House**.
 
 Il décrit les performances disponibles, les limites actuelles ainsi que les possibilités d'évolution de l'infrastructure.
 

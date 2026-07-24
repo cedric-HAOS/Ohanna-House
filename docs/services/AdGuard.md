@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | AdGuard Home |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit l'architecture et la configuration des serveurs **AdGuard Home** utilisés dans l'infrastructure **Ohanna-House**.
+Ce document décrit l'architecture et la configuration des serveurs **AdGuard Home** utilisés dans l'infrastructure **Ohana-House**.
 
 Les serveurs AdGuard Home assurent la résolution DNS des équipements du réseau local ainsi que le filtrage des requêtes DNS.
 

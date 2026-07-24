@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Raspberry Pi Linky |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
