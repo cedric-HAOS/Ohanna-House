@@ -1,169 +1,94 @@
 <div align="center">
 
-```text
-╔══════════════════════════════════════════════════════╗
-║                                                      ║
-║                  OHANA-HOUSE                        ║
-║                                                      ║
-║        Home Infrastructure Documentation             ║
-║                                                      ║
-╚══════════════════════════════════════════════════════╝
-```
-
 # Ohana-House
 
-Documentation technique de l'infrastructure informatique et domotique de la maison.
+Documentation technique de l'infrastructure informatique et domotique de la
+maison, déploiement de référence de l'écosystème Ohana.
 
-![Version](https://img.shields.io/badge/version-v0.1%20Iruka-blue)
-![Documentation](https://img.shields.io/badge/documentation-35%25-green)
+![Version](https://img.shields.io/badge/stable-v1.0.0%20Naruto-blue)
 ![Status](https://img.shields.io/badge/status-active-orange)
-![Branch](https://img.shields.io/badge/branch-main-purple)
+![Branch](https://img.shields.io/badge/branch-Hashirama-purple)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 </div>
 
----
-
 ## Présentation
 
-**Ohana-House** est le référentiel de documentation technique de l'infrastructure informatique et domotique de la maison.
+Ohana-House décrit :
 
-Ce dépôt décrit :
-
-- l'architecture générale ;
-- les équipements matériels ;
+- l'architecture physique et logique ;
+- les équipements réseau et domotiques ;
 - les services installés ;
-- les procédures d'exploitation ;
-- les choix techniques ;
-- les évolutions de l'infrastructure.
+- les procédures d'installation, d'exploitation et de restauration ;
+- les décisions et standards techniques ;
+- le déploiement de référence d'Ohana-Agent et d'Ohana-Vision.
 
-L'objectif est de garantir qu'à tout moment, l'installation puisse être comprise, maintenue, restaurée et faire évoluer sans dépendre uniquement de la mémoire de son administrateur.
+L'objectif est qu'une installation puisse être comprise, maintenue et
+reconstruite sans dépendre uniquement de la mémoire de son administrateur.
 
----
+## État du projet
 
-## Sommaire
+| Élément | Valeur |
+| --- | --- |
+| Release stable | `v1.0.0-Naruto` |
+| Branche de développement | `Hashirama` |
+| Prochaine release | `v2.0.0-Hashirama` |
 
-- [Vue d'ensemble](#vue-densemble)
-- [Structure du dépôt](#structure-du-dépôt)
-- [Documents principaux](#documents-principaux)
-- [Diagrammes](#diagrammes)
-- [Feuille de route](#feuille-de-route)
+Les détails sont maintenus dans [PROJECT-STATE.md](PROJECT-STATE.md) et
+[ROADMAP.md](ROADMAP.md).
 
----
-
-## Vue d'ensemble
-
-| Domaine | Description |
-|--------|-------------|
-| Architecture | Description complète de l'infrastructure physique et logique |
-| Réseau | Freebox Pop, switchs, Wi-Fi, DNS, WireGuard |
-| Domotique | Home Assistant, MQTT, Z-Wave, Linky |
-| Procédures | Sauvegardes, restaurations, maintenance |
-| Standards | Versioning, nommage, rédaction documentaire |
-
----
-
-## Structure du dépôt
+## Structure
 
 ```text
 Ohana-House/
-│
-├── README.md
-├── CHANGELOG.md
-├── ROADMAP.md
-├── PROJECT-STATE.md
-├── LICENSE
-│
+├── adr/
+├── diagrams/
+│   ├── flows/
+│   ├── logical/
+│   └── physical/
 ├── docs/
 │   ├── architecture/
-│   ├── network/
-│   ├── services/
 │   ├── home-assistant/
+│   ├── network/
+│   ├── procedures/
+│   ├── services/
 │   └── standards/
-│
-├── procedures/
-├── diagrams/
-│   ├── physical/
-│   ├── logical/
-│   └── flows/
-│
-├── configs/
-├── scripts/
-├── assets/
-└── backlog/
+├── CHANGELOG.md
+├── Chemin-Critique-de-Reconstruction.md
+├── Guide-de-Reconstruction.md
+├── HASHIRAMA.md
+├── PROJECT-STATE.md
+├── ROADMAP.md
+├── START-HERE.md
+└── Validation-Finale.md
 ```
-
----
-
-## Cycle de vie documentaire
-
-Chaque composant de l'infrastructure est documenté selon son cycle de vie.
-
-```text
-Composant
-        │
-        ▼
-Document d'exploitation
-        │
-        ▼
-Installation
-        │
-        ▼
-Configuration
-        │
-        ▼
-Maintenance
-        │
-        ▼
-Sauvegarde
-        │
-        ▼
-Restauration
-        │
-        ▼
-Migration
-```
-
-Cette organisation garantit que chaque opération est documentée de manière indépendante, tout en conservant une documentation cohérente et facilement maintenable.
-
----
 
 ## Documents principaux
 
-### Architecture
+- [Point d'entrée](START-HERE.md)
+- [Architecture](docs/architecture/Architecture.md)
+- [Topologie réseau](docs/architecture/Topologie-Reseau.md)
+- [Inventaire](docs/architecture/Inventaire.md)
+- [Guide de reconstruction](Guide-de-Reconstruction.md)
+- [Chemin critique de reconstruction](Chemin-Critique-de-Reconstruction.md)
+- [Validation finale](Validation-Finale.md)
+- [Standards documentaires](docs/standards/Documentation.md)
 
-- `docs/architecture/Architecture.md`
-- `docs/architecture/Topologie-Reseau.md`
-- `docs/architecture/Architecture-Logique.md`
-- `docs/architecture/Inventaire.md`
-- `docs/architecture/Adressage-IP.md`
-- `docs/architecture/Capacites-Reseau.md`
-- `docs/architecture/Decisions-d-Architecture.md`
+## Domaines couverts
 
-### Réseau
-
-- `docs/network/Freebox-Pop.md`
-- `docs/network/Switches.md`
-- `docs/network/Linksys-LAPAC1750.md`
-
-### Services
-
-- `docs/services/AdGuard.md`
-- `docs/services/WireGuard.md`
-- `docs/services/Mosquitto.md`
-
-### Home Assistant
-
-- `docs/home-assistant/Home-Assistant-Green.md`
-
----
+| Domaine | Contenu |
+| --- | --- |
+| Réseau | Freebox Pop, commutateurs, Wi-Fi, DNS et WireGuard |
+| Domotique | Home Assistant, MQTT, Z-Wave et Linky |
+| Exploitation | Installation, configuration, sauvegarde, maintenance, restauration et migration |
+| Standards | Versionnement, nommage et rédaction documentaire |
 
 ## Diagrammes
 
-Les diagrammes officiels sont rédigés en Mermaid et stockés dans le dossier `diagrams`.
+Les diagrammes officiels sont rédigés en Mermaid dans `diagrams/`.
 
 | ID | Diagramme |
-|----|-----------|
+| --- | --- |
 | DGM-001 | Architecture physique |
 | DGM-002 | Topologie réseau |
 | DGM-003 | Architecture logique |
@@ -171,39 +96,6 @@ Les diagrammes officiels sont rédigés en Mermaid et stockés dans le dossier `
 | DGM-005 | Flux Z-Wave |
 | DGM-006 | Flux DNS / WireGuard |
 
----
-
-## Feuille de route
-
-| Phase | Nom | Statut |
-|------|-----|--------|
-| v0.1 | Iruka | En cours |
-| v0.5 | Kakashi | Prévu |
-| v1.0 | Naruto | Prévu |
-| v1.1 | Yamato | Prévu |
-| v1.2 | Shikamaru | Prévu |
-| v1.3 | Tsunade | Prévu |
-| v2.0 | Hashirama | Prévu |
-
----
-
-## Documents de pilotage
-
-Les documents suivants sont placés à la racine du dépôt afin de faciliter l'exploitation de l'infrastructure :
-
-| Document | Rôle |
-|-----------|------|
-| START-HERE.md | Point d'entrée de la documentation |
-| README.md | Présentation du projet |
-| PROJECT-STATE.md | État actuel du projet |
-| ROADMAP.md | Évolutions prévues |
-| CHANGELOG.md | Historique des évolutions |
-| Guide-de-Reconstruction.md | Reconstruction complète de l'infrastructure |
-| Chemin-Critique-de-Reconstruction.md | Checklist de reconstruction |
-| Validation-Finale.md | Validation de l'infrastructure |
-
----
-
 ## Licence
 
-Ce projet est distribué sous licence MIT .
+Ce projet est distribué sous licence MIT. Voir [LICENSE](LICENSE).

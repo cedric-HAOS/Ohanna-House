@@ -4,7 +4,7 @@ v1.0.0-Naruto
 
 ## Branche de développement
 
-hashirama
+Hashirama
 
 ## Prochaine release
 
